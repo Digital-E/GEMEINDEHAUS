@@ -45,11 +45,11 @@ function expand() {
   if(isExpanded) {
     // this.classList.remove('box--expanded');
 
-    box.classList.remove('box--expanded');
-
+    // box.classList.remove('box--expanded');
+    //
     scene.classList.add('scene');
     scene.classList.remove(`${faceName}--scene--expand`);
-    
+    //
     this.classList.remove(`box__face--${faceName}--expanded`);
     this.classList.remove('box--expanded');
     scene.classList.remove('expanded');

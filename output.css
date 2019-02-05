@@ -1,16 +1,23 @@
 body {
   font-family: sans-serif;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .scene {
-  position: absolute;
   width: 600px;
   height: 400px;
   margin: 0;
   perspective: 400px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 0;
+  left: 0;
   transition-duration: 1s;
 }
 
@@ -19,32 +26,32 @@ body {
   height: 100%;
   position: relative;
   transform-style: preserve-3d;
-  transform: translateZ(-50px);
+  transform: translateZ(-200px);
   transition: transform 1s;
 }
 
 .box.show-front {
-  transform: translateZ(-50px) rotateY(0deg);
+  transform: translateZ(-200px) rotateY(0deg);
 }
 
 .box.show-back {
-  transform: translateZ(-50px) rotateY(-180deg);
+  transform: translateZ(-200px) rotateY(-180deg);
 }
 
 .box.show-right {
-  transform: translateZ(-150px) rotateY(-90deg);
+  transform: translateZ(-200px) rotateY(-90deg);
 }
 
 .box.show-left {
-  transform: translateZ(-150px) rotateY(90deg);
+  transform: translateZ(-200px) rotateY(90deg);
 }
 
 .box.show-top {
-  transform: translateZ(-100px) rotateX(-90deg);
+  transform: translateZ(-200px) rotateX(-90deg);
 }
 
 .box.show-bottom {
-  transform: translateZ(-100px) rotateX(90deg);
+  transform: translateZ(-200px) rotateX(90deg);
 }
 
 .box__face {
@@ -54,6 +61,7 @@ body {
   color: white;
   text-align: center;
   overflow: hidden;
+  opacity: 1;
 }
 
 .box__face--front,
@@ -146,8 +154,6 @@ label {
   width: 100%;
   height: 100%;
   margin: 0;
-  top: 0;
-  left: 0;
   transform: none;
   perspective: 9999px;
   transition-duration: 1s;
@@ -158,8 +164,6 @@ label {
   width: 100%;
   height: 100%;
   margin: 0;
-  top: 0;
-  left: 0;
   transform: none;
   perspective: 9999px;
   transition-duration: 1s;
@@ -170,8 +174,6 @@ label {
   width: 100vw;
   height: 100vh;
   margin: 0;
-  top: 0;
-  left: 0;
   transform: none;
   perspective: 9999px;
   transition-duration: 1s;
@@ -182,8 +184,6 @@ label {
   width: 100vw;
   height: 100vh;
   margin: 0;
-  top: 0;
-  left: 0;
   transform: none;
   perspective: 9999px;
   transition-duration: 1s;
@@ -194,8 +194,6 @@ label {
   width: 100vw;
   height: 100vh;
   margin: 0;
-  top: 0;
-  left: 0;
   transform: none;
   perspective: 9999px;
   transition-duration: 1s;
@@ -206,8 +204,6 @@ label {
   width: 100vw;
   height: 100vh;
   margin: 0;
-  top: 0;
-  left: 0;
   transform: none;
   perspective: 9999px;
   transition-duration: 1s;

@@ -24,7 +24,7 @@ var scene = document.querySelector('.scene');
 frontFace.addEventListener('click', expand);
 
 
-// Add click listener to all
+// Full Screen On Div Click
 
 let boxChildren = box.children;
 
@@ -43,25 +43,26 @@ function expand() {
   console.log(faceName);
 
   if(isExpanded) {
-    // this.classList.remove('box--expanded');
 
-    // box.classList.remove('box--expanded');
-    //
     scene.classList.add('scene');
     scene.classList.remove(`${faceName}--scene--expand`);
-    //
+
     this.classList.remove(`box__face--${faceName}--expanded`);
     this.classList.remove('box--expanded');
     scene.classList.remove('expanded');
 
+    this.style.overflow = 'hidden';
+
   } else {
-    // this.classList.add('box--expanded');
     box.classList.add('box--expanded');
     scene.classList.remove('scene');
     scene.classList.add(`${faceName}--scene--expand`);
-    //
+
     this.classList.add('box--expanded');
     this.classList.add(`box__face--${faceName}--expanded`);
     scene.classList.add('expanded');
+    this.style.overflow = 'auto';
   }
 };
+
+//Rotate On Drag

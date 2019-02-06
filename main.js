@@ -5,6 +5,8 @@ var box = document.querySelector('.box');
  function changeSide() {
    var checkedRadio = radioGroup.querySelector(':checked');
    var showClass = 'show-' + checkedRadio.value;
+     
+     
    if ( currentClass ) {
      box.classList.remove( currentClass );
    }
@@ -71,3 +73,20 @@ function expand(e) {
     }
 
 };
+
+//Translate Div See News
+
+var newsElements = document.querySelectorAll('.news-element');
+var backButton = document.querySelector('.back-button');
+
+newsElements.forEach((element) => {
+    element.addEventListener('click', function(){
+        TweenMax.to(".header", 2, {y:'-100%', ease: Circ.easeIn});
+        TweenMax.to(".news-loaded-container", 2, {y:'-100%', ease: Circ.easeIn});
+    })
+});
+
+backButton.addEventListener('click', function(){
+        TweenMax.to(".header", 2, {y:'0%', ease: Circ.easeIn});
+        TweenMax.to(".news-loaded-container", 2, {y:'0%', ease: Circ.easeIn});
+})

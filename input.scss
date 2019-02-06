@@ -1,12 +1,67 @@
+@font-face {
+  src: url('./fonts/Druk-Wide-Medium.otf');
+  font-family: 'Druk-Wide-Medium'
+}
+
+@font-face {
+  src: url('./fonts/DrukCond-Super.otf');
+  font-family: 'DrukCond-Super'
+}
+
+@font-face {
+  src: url('./fonts/GT-America.otf');
+  font-family: 'GT-America'
+}
+
+
 body {
-  font-family: sans-serif;
+  font-family: 'Druk-Wide-Medium';
   height: 100vh;
   width: 100vw;
   margin: 0;
   padding: 0;
   top: 0;
   left: 0;
-  display: flex;
+    background-color: #e1b1b9;
+    color: #325342;
+}
+
+input[type="radio"] {
+    left: -999em;
+    position: absolute;
+}
+
+.radio-group {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin-right: 20px;
+    transform: rotateZ(90deg);
+    transform-origin: bottom right;
+    color: #325342;
+    z-index: 999;
+    
+}
+
+.news-container {
+    position: absolute;
+    height: 100vh;
+    font-size: 70px;
+}
+
+.news-elements {
+    overflow: auto;
+    height: 100%
+}
+
+.cube-container {
+    position: fixed;
+    height: 400px;
+    width: 600px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
   justify-content: center;
   align-items: center;
 }
@@ -29,7 +84,6 @@ body {
   position: relative;
   transform-style: preserve-3d;
   transform: translateZ(-200px);
-
   transition: transform 1s;
 }
 
@@ -43,10 +97,10 @@ body {
 
 .box__face {
   position: absolute;
-  // border: 2px solid black;
+   border: 2px solid black;
   font-size: 40px;
   font-weight: bold;
-  color: white;
+  color: black;
   text-align: center;
   overflow: hidden;
   opacity: 1;
@@ -157,8 +211,8 @@ label { margin-right: 10px; }
 
 .back--scene--expand {
   position: absolute;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   margin: 0;
   transform: none;
   perspective: 9999px;
@@ -167,8 +221,8 @@ label { margin-right: 10px; }
 
 .left--scene--expand {
   position: absolute;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   margin: 0;
   transform: none;
   perspective: 9999px;
@@ -177,8 +231,8 @@ label { margin-right: 10px; }
 
 .top--scene--expand {
   position: absolute;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   margin: 0;
   transform: none;
   perspective: 9999px;
@@ -187,8 +241,8 @@ label { margin-right: 10px; }
 
 .bottom--scene--expand {
   position: absolute;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   margin: 0;
   transform: none;
   perspective: 9999px;

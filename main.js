@@ -181,15 +181,14 @@ var backButton = document.querySelector('.back-button');
 
 newsElements.forEach((element) => {
     element.addEventListener('click', function(){
-        TweenMax.staggerTo(".header-subelement", 1.5, {y:'-100%', ease: Circ.easeIn}, 0.1);
-        TweenMax.from(".loaded-subelement", 3, {y:'100%', ease: Circ.easeOut})
-        .staggerTo(".loaded-subelement", 2, {y:'0%', ease: Circ.easeIn}, 0.3);
+        TweenMax.staggerTo(".header-subelement", 1.5, {y:'-100%', ease:Power2.easeInOut}, 0.1);
+
+        TweenMax.staggerFromTo(".loaded-subelement", 2,{y:'100%'}, {y:'0%', ease: Circ.easeOut}, 0.5)
     })
 });
 
 backButton.addEventListener('click', function(){
-        TweenMax.staggerTo(".header-subelement", 2, {y:'0%', ease: Circ.easeInOut}, 0);
-//        TweenMax.to(".news-loaded-container", 1, {y:'0%', ease: Circ.easeIn});
+        TweenMax.staggerTo(".header-subelement", 2, {y:'0%', ease:Power2.easeInOut}, 0);
 });
 
 

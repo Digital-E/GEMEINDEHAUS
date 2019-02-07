@@ -394,7 +394,7 @@ label { margin-right: 10px; }
 
 
 .news-loaded-content-top-container {
-  position: fixed;
+  position: absolute;
   margin: 70px 50px 0px 25px;
   width: 90%;
   z-index: 999;
@@ -405,6 +405,7 @@ label { margin-right: 10px; }
 }
 
 .news-loaded-content-top-container-content {
+  position: relative;
   display: flex;
   justify-content: space-between;
   font-size: 48px;
@@ -434,8 +435,8 @@ label { margin-right: 10px; }
 
 .news-loaded-content-images {
   margin: 25px;
-  max-height: 500px;
-  max-width: 600px;
+  max-height: 800px;
+  max-width: 800px;
 }
 
 .news-loaded-content-images img {
@@ -444,9 +445,10 @@ label { margin-right: 10px; }
 }
 
 .news-loaded-content-text {
-  margin: 25px;
+  margin: 30px;
+  line-height: 25px;
   font-family: 'GT-America';
-  max-width: 90%
+  max-width: 70%
 }
 
 hr {

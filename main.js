@@ -1,3 +1,6 @@
+var frontFace = document.querySelector('.box__face--front');
+var scene = document.querySelector('.scene');
+
 var box = document.querySelector('.box');
  var radioGroup = document.querySelector('.radio-group');
  var currentClass = '';
@@ -15,19 +18,19 @@ var box = document.querySelector('.box');
    box.classList.add( showClass );
    currentClass = showClass;
      
-//   expand();
+   setTimeout(function(){
+      expandBis(checkedRadio.value) 
+   }, 1000);
  }
  // set initial side
- changeSide();
+// changeSide();
 
  radioGroup.addEventListener( 'change', changeSide );
 
 //samuel code
 
-var frontFace = document.querySelector('.box__face--front');
-var scene = document.querySelector('.scene');
 
-frontFace.addEventListener('click', expand);
+//frontFace.addEventListener('click', expand);
 
 
 // Full Screen On Div Click
@@ -63,7 +66,11 @@ function expand() {
       
       setTimeout(function(){
           cubeContainer.classList.remove('expand--cube')
-      },1000);   
+      },1000);
+        
+      for(i = 0; i < box.children.length; i++) {
+          box.children[i].style.opacity = 1;
+      }  
 
     } else {
       box.classList.add(`${faceName}--box--expanded`);
@@ -80,12 +87,91 @@ function expand() {
     
       
       document.removeEventListener('mousemove', moveFunction);
-        
-//      box.style.transform = none;
     
     }
 
 };
+
+function expandBis(currentClass) {
+    
+  var isExpanded = box.children[0].classList[2];
+  var faceName = currentClass;
+  var cubeContainer = box.parentElement.parentElement;
+  var index;
+  var filterArray;
+    
+    console.log(faceName);
+    
+    if (faceName == 'front') {
+        index = 0;
+        }
+    else if (faceName == 'back') {
+        index = 1;
+    }
+    else if (faceName == 'right') {
+         index = 2;    
+    }
+    else if (faceName == 'left') {
+        index = 3;
+    }
+    else if (faceName == 'top') {
+        index = 4;
+    }
+    else {
+        index = 5;
+    }
+
+    
+    if(isExpanded) {
+        
+      scene.classList.add('scene');
+      box.classList.remove('box--expanded');
+      scene.classList.remove(`${faceName}--scene--expand`);
+        
+
+      box.children[index].remove(`box__face--${faceName}--expanded`);
+      box.children[index].remove('box--expanded');
+      scene.classList.remove('expanded');
+
+      box.children[index].style.overflow = 'hidden';
+        
+      document.addEventListener('mousemove', moveFunction);
+        
+      for(i = 0; i < box.children.length; i++) {
+          box.children[i].style.opacity = 1;
+      }  
+      
+      setTimeout(function(){
+          cubeContainer.classList.remove('expand--cube')
+      },1000);
+        
+
+
+    } else {
+        
+      for(i = 0; i < box.children.length; i++) {
+          console.log(box.children[i]);
+          box.children[i].style.opacity = 0;
+          box.children[index].style.opacity = 1;
+      }
+        
+      box.classList.add(`${faceName}--box--expanded`);
+      scene.classList.remove('scene');
+      scene.classList.add(`${faceName}--scene--expand`);
+      
+      cubeContainer.classList.add('expand--cube'); 
+
+      box.children[index].classList.add('box--expanded');
+      box.children[index].classList.add(`box__face--${faceName}--expanded`);
+      scene.classList.add('expanded');
+        
+      box.children[index].style.overflow = 'auto';
+    
+      
+      document.removeEventListener('mousemove', moveFunction);
+
+    }
+}
 
 //Translate Div See News
 
@@ -96,6 +182,8 @@ var backButton = document.querySelector('.back-button');
 newsElements.forEach((element) => {
     element.addEventListener('click', function(){
         TweenMax.staggerTo(".header-subelement", 1.5, {y:'-100%', ease: Circ.easeIn}, 0.1);
+        TweenMax.from(".loaded-subelement", 3, {y:'100%', ease: Circ.easeOut})
+        .staggerTo(".loaded-subelement", 2, {y:'0%', ease: Circ.easeIn}, 0.3);
     })
 });
 

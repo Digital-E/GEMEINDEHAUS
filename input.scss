@@ -199,13 +199,6 @@ input[type="radio"] {
   transition-duration: 1s;
 }
 
-//.box__face--front  { background: #e1b1b9; }
-//.box__face--right  { background: #e1b1b9; }
-//.box__face--back   { background: #e1b1b9; }
-//.box__face--left   { background: #e1b1b9; }
-//.box__face--top    { background: #e1b1b9; }
-//.box__face--bottom { background: #e1b1b9; }
-
 .box__face--front  { transform: rotateY(  0deg) translateZ( 100px); }
 .box__face--back   { transform: rotateY(180deg) translateZ( 100px); }
 
@@ -220,41 +213,12 @@ label { margin-right: 10px; }
 
 // Samuel CSS
 
-// .radio-group {
-//   position: absolute;
-// }
-
 .box--expanded {
   width: 100%;
   height: 100%;
   perspective: none;
   transition-duration: 1s;
 }
-
-// .front--box--expanded {
-//   width: 100%;
-//   height: 100%;
-//   perspective: none;
-//   transform: translateZ(0) rotateY(90deg);
-//   transition-duration: 1s;
-// }
-
-// .right--box--expanded {
-//   width: 100%;
-//   height: 100%;
-//   perspective: none;
-//   transform: translateZ(0) rotateY(90deg);
-//   transition-duration: 1s;
-// }
-
-// .bottom--box--expanded {
-//   width: 100%;
-//   height: 100%;
-//   perspective: none;
-//   transform: translateZ(-600px) rotateX(90deg) !important;
-//   transition-duration: 1s;
-// }
-
 
 .front--scene--expand {
   position: absolute;
@@ -347,8 +311,8 @@ label { margin-right: 10px; }
 }
 
 .expand--cube {
-    height: calc(100vh - 200px);
-    width: calc(100vw - 200px);
+    height: calc(100vh - 100px);
+    width: calc(100vw - 100px);
     transition-duration: 1s;
     position: fixed;
     left: 50%;
@@ -361,17 +325,80 @@ label { margin-right: 10px; }
     font-family: 'GT-America';
 }
 
-.spaces {
-    font-size: 100px;
-    
+.front-image {
+  background-image: url('./images/placeholder.png');
+  background-position: center;
+  background-size: cover;
+  min-height: 400px;
 }
 
-.placeholder-image {
-    background-image: url('./placeholder.png');
+.spaces-image {
+    background-image: url('./images/spaces.jpg');
     background-position: center;
     background-size: cover;
     min-height: 400px;
 }
+
+.neighbourhood-image {
+  background-image: url('./images/neighbourhood.jpg');
+  background-position: center;
+  background-size: cover;
+  min-height: 400px;
+}
+
+.info-image {
+  background-image: url('./images/info.jpg');
+  background-position: center;
+  background-size: cover;
+  min-height: 400px;
+}
+
+.calendar-image {
+  background-image: url('./images/calendar.jpg');
+  background-position: center;
+  background-size: cover;
+  min-height: 400px;
+}
+
+.map-container {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  grid-template-rows: 1fr;
+}
+
+.map-container-left {
+  font-size: 20px;
+  font-family: 'GT-America';
+  max-height: inherit;
+  overflow: scroll;
+}
+
+.map-container-left ul {
+  text-align: left;
+  margin-left: 25px;
+  padding: 0;
+  line-height: 0px;
+}
+
+.map-container-left ul li {
+  text-align: left;
+  height: 40px;
+  margin: 0;
+  padding: 0;
+}
+
+.map-list-title {
+  font-family: 'Druk-Wide-Medium';
+  text-align: left;
+  margin-left: 25px;
+  margin-top: 25px;
+  padding: 0;
+  line-height: 25px;
+}
+
 
 .news-loaded-container {
   position: fixed;
@@ -391,7 +418,6 @@ label { margin-right: 10px; }
   overflow: auto;
   height: 100%;
 }
-
 
 .news-loaded-content-top-container {
   position: absolute;
@@ -456,10 +482,7 @@ hr {
   border-color: $pink;
 }
 
-.gradient-top {
-  background: linear-gradient(180deg, rgba(15,84,64,1) 0%, rgba(0,0,0,0) 67%);
-  position: fixed;
-  height: 100px;
-  width: 100%;
-  z-index: 999;
+#map {
+  height: 100%;
+  width: 100%
 }

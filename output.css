@@ -330,8 +330,8 @@ label {
 }
 
 .expand--cube {
-  height: calc(100vh - 200px);
-  width: calc(100vw - 200px);
+  height: calc(100vh - 100px);
+  width: calc(100vw - 100px);
   transition-duration: 1s;
   position: fixed;
   left: 50%;
@@ -344,15 +344,78 @@ label {
   font-family: "GT-America";
 }
 
-.spaces {
-  font-size: 100px;
-}
-
-.placeholder-image {
-  background-image: url("./placeholder.png");
+.front-image {
+  background-image: url("./images/placeholder.png");
   background-position: center;
   background-size: cover;
   min-height: 400px;
+}
+
+.spaces-image {
+  background-image: url("./images/spaces.jpg");
+  background-position: center;
+  background-size: cover;
+  min-height: 400px;
+}
+
+.neighbourhood-image {
+  background-image: url("./images/neighbourhood.jpg");
+  background-position: center;
+  background-size: cover;
+  min-height: 400px;
+}
+
+.info-image {
+  background-image: url("./images/info.jpg");
+  background-position: center;
+  background-size: cover;
+  min-height: 400px;
+}
+
+.calendar-image {
+  background-image: url("./images/calendar.jpg");
+  background-position: center;
+  background-size: cover;
+  min-height: 400px;
+}
+
+.map-container {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+}
+
+.map-container-left {
+  font-size: 20px;
+  font-family: "GT-America";
+  max-height: inherit;
+  overflow: scroll;
+}
+
+.map-container-left ul {
+  text-align: left;
+  margin-left: 25px;
+  padding: 0;
+  line-height: 0px;
+}
+
+.map-container-left ul li {
+  text-align: left;
+  height: 40px;
+  margin: 0;
+  padding: 0;
+}
+
+.map-list-title {
+  font-family: "Druk-Wide-Medium";
+  text-align: left;
+  margin-left: 25px;
+  margin-top: 25px;
+  padding: 0;
+  line-height: 25px;
 }
 
 .news-loaded-container {
@@ -437,12 +500,9 @@ hr {
   border-color: #EAAFB9;
 }
 
-.gradient-top {
-  background: linear-gradient(180deg, #0f5440 0%, rgba(0, 0, 0, 0) 67%);
-  position: fixed;
-  height: 100px;
+#map {
+  height: 100%;
   width: 100%;
-  z-index: 999;
 }
 
 /*# sourceMappingURL=output.css.map */

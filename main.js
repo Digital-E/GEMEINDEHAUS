@@ -2,14 +2,15 @@
 var frontFace = document.querySelector('.box__face--front');
 var scene = document.querySelector('.scene');
 
- var box = document.querySelector('.box');
- var radioGroup = document.querySelector('.radio-group');
- var currentClass = '';
+var box = document.querySelector('.box');
+var radioGroup = document.querySelector('.radio-group');
+var currentClass = '';
 
 let faceName;
 let cubeContainer = box.parentElement.parentElement;
 
 var isExpanded;
+var closed;
 
  function changeSide() {
 
@@ -54,6 +55,19 @@ var isExpanded;
 
 //samuel code
 
+//Close All on Close Button Click 
+
+let closeButtons = document.getElementsByClassName('close-button');
+
+for(var i = 0; i < closeButtons.length; i++) {
+  closeButtons[i].addEventListener('click', closeAll);
+}
+
+function closeAll() {
+  // closed = "closed";
+  expand("", "closed");
+};
+
 // Full Screen On Div Click
 
 let boxChildren = box.children;
@@ -63,8 +77,7 @@ function expand(currentClass, closed) {
 
   var index;
 
-  console.log(closed);
-  var closed = closed;
+  closed = closed;
 
   if(currentClass) {
     faceName = currentClass;
@@ -94,13 +107,16 @@ function expand(currentClass, closed) {
     if(isExpanded) {
         
       scene.classList.add('scene');
-      box.classList.remove('box--expanded');
       scene.classList.remove(`${faceName}--scene--expand`);
+      scene.classList.remove('expanded');
+
+      // box.classList.remove('box--expanded');
+      // box.classList.remove(`${faceName}--box--expanded`);
+      // box.classList.remove(`show-${faceName}`);
         
 
       box.children[index].classList.remove(`box__face--${faceName}--expanded`);
       box.children[index].classList.remove('box--expanded');
-      scene.classList.remove('expanded');
 
       box.children[index].style.overflow = 'hidden';
         
@@ -110,59 +126,44 @@ function expand(currentClass, closed) {
           cubeContainer.classList.remove('expand--cube')
       },1000);
 
-      for(i = 0; i < box.children.length; i++) {
-        box.children[i].style.opacity = 1;
-    }  
+      setTimeout(function(){
+          for(i = 0; i < box.children.length; i++) {
+            box.children[i].style.visibility = "visible";
+              }  
+            },1000);
 
     } else {
         
       for(i = 0; i < box.children.length; i++) {
-          box.children[i].style.opacity = 0;
-          box.children[index].style.opacity = 1;
+          box.children[i].style.visibility = 'hidden';
+          box.children[index].style.visibility = 'visible';
       }
         
-      box.classList.add(`${faceName}--box--expanded`);
-      scene.classList.remove('scene');
-      scene.classList.add(`${faceName}--scene--expand`);
-      
-      cubeContainer.classList.add('expand--cube'); 
+      // box.classList.add(`${faceName}--box--expanded`);
 
-      box.children[index].classList.add('box--expanded');
-      box.children[index].classList.add(`box__face--${faceName}--expanded`);
-      scene.classList.add('expanded');
-        
-      box.children[index].style.overflow = 'auto';
-    
-      
-      document.removeEventListener('mousemove', moveFunction);
-
-      isExpanded = box.children[index].classList[2];
-
-      if(closed == 'closed') {
-        isExpanded = null;
-      }
-
+      setTimeout(function(){
+        scene.classList.remove('scene');
+        scene.classList.add(`${faceName}--scene--expand`);
+        scene.classList.add('expanded');
+  
+        box.children[index].classList.add('box--expanded');
+        box.children[index].classList.add(`box__face--${faceName}--expanded`);
+          
+        box.children[index].style.overflow = 'auto';
+  
+        cubeContainer.classList.add('expand--cube'); 
+  
+        document.removeEventListener('mousemove', moveFunction);
+  
+        isExpanded = box.children[index].classList[2];
+      },1000);
     }
 
-    // console.log(isExpanded);
-    // console.log(index);
-    // console.log(box.children[index]);
-    // console.log(faceName);
-    // console.log(currentClass);
+    if(closed) {
+      isExpanded = null;
+    }
 }
 
-//Close All on Close Button Click 
-
-let closeButtons = document.getElementsByClassName('close-button');
-
-for(var i = 0; i < closeButtons.length; i++) {
-  closeButtons[i].addEventListener('click', closeAll);
-}
-
-function closeAll() {
-  var closed = 'closed';
-  return expand(null, closed);
-};
 
 //Translate Hidden Div Up
 

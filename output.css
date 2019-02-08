@@ -83,7 +83,6 @@ input[type=radio] {
 }
 
 .news-element:hover {
-  position: relative;
   z-index: 999;
 }
 

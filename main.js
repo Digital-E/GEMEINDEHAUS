@@ -1,3 +1,4 @@
+
 var frontFace = document.querySelector('.box__face--front');
 var scene = document.querySelector('.scene');
 
@@ -8,22 +9,43 @@ var scene = document.querySelector('.scene');
 let faceName;
 let cubeContainer = box.parentElement.parentElement;
 
+var isExpanded;
+
  function changeSide() {
-   var checkedRadio = radioGroup.querySelector(':checked');
-   var showClass = 'show-' + checkedRadio.value;
-   
-   box.style.transform = '';
-   document.removeEventListener('mousemove', moveFunction);
-     
-   if ( currentClass ) {
-     box.classList.remove( currentClass );
-   }
-   box.classList.add( showClass );
-   currentClass = showClass;
-     
-   setTimeout(function(){
+
+  var checkedRadio = radioGroup.querySelector(':checked');
+  var showClass = 'show-' + checkedRadio.value;
+  box.style.transform = '';
+  document.removeEventListener('mousemove', moveFunction);
+
+  if(isExpanded) {
+    expand();
+    document.removeEventListener('mousemove', moveFunction);
+    setTimeout(function(){
+          if ( currentClass ) {
+      box.classList.remove( currentClass );
+    }
+      box.classList.add( showClass );
+      currentClass = showClass;
+    }, 1000);
+
+    isExpanded = null;
+    setTimeout(function(){
       expand(checkedRadio.value);
-   }, 1000);
+   }, 2000);
+  } else {
+      
+    if ( currentClass ) {
+      box.classList.remove( currentClass );
+    }
+    box.classList.add( showClass );
+    currentClass = showClass;
+      
+    setTimeout(function(){
+       expand(checkedRadio.value);
+    }, 1000);
+
+  }
  }
  // set initial side
 // changeSide();
@@ -36,64 +58,13 @@ let cubeContainer = box.parentElement.parentElement;
 
 let boxChildren = box.children;
 
-// for(var i = 0; i < boxChildren.length; i++) {
-//   boxChildren[i].addEventListener('click', expand);
-// }
 
-
-// function expand() {
-//   var isExpanded = this.classList[2];
-//   var faceName = this.classList[1].substring(11);
-//   var cubeContainer = this.parentElement.parentElement.parentElement;
-    
-//     if(isExpanded) {
-        
-//       scene.classList.add('scene');
-//       box.classList.remove('box--expanded');
-//       scene.classList.remove(`${faceName}--scene--expand`);
-        
-
-//       this.classList.remove(`box__face--${faceName}--expanded`);
-//       this.classList.remove('box--expanded');
-//       scene.classList.remove('expanded');
-
-//       this.style.overflow = 'hidden';
-        
-//       document.addEventListener('mousemove', moveFunction);
-        
-      
-//       setTimeout(function(){
-//           cubeContainer.classList.remove('expand--cube')
-//       },1000);
-        
-//       for(i = 0; i < box.children.length; i++) {
-//           box.children[i].style.opacity = 1;
-//       }  
-
-//     } else {
-//       box.classList.add(`${faceName}--box--expanded`);
-//       scene.classList.remove('scene');
-//       scene.classList.add(`${faceName}--scene--expand`);
-      
-//       cubeContainer.classList.add('expand--cube'); 
-
-//       this.classList.add('box--expanded');
-//       this.classList.add(`box__face--${faceName}--expanded`);
-//       scene.classList.add('expanded');
-        
-//       this.style.overflow = 'auto';
-    
-      
-//       document.removeEventListener('mousemove', moveFunction);
-    
-//     }
-
-// };
-
-
-function expand(currentClass) {
+function expand(currentClass, closed) {
 
   var index;
+
+  console.log(closed);
+  var closed = closed;
 
   if(currentClass) {
     faceName = currentClass;
@@ -118,7 +89,7 @@ function expand(currentClass) {
         index = 5;
     }
 
-    var isExpanded = box.children[index].classList[2];
+    isExpanded = box.children[index].classList[2];
     
     if(isExpanded) {
         
@@ -165,13 +136,19 @@ function expand(currentClass) {
       
       document.removeEventListener('mousemove', moveFunction);
 
+      isExpanded = box.children[index].classList[2];
+
+      if(closed == 'closed') {
+        isExpanded = null;
+      }
+
     }
 
-    console.log(isExpanded);
-    console.log(index);
-    console.log(box.children[index]);
-    console.log(faceName);
-    console.log(currentClass);
+    // console.log(isExpanded);
+    // console.log(index);
+    // console.log(box.children[index]);
+    // console.log(faceName);
+    // console.log(currentClass);
 }
 
 //Close All on Close Button Click 
@@ -183,7 +160,8 @@ for(var i = 0; i < closeButtons.length; i++) {
 }
 
 function closeAll() {
-  return expand();
+  var closed = 'closed';
+  return expand(null, closed);
 };
 
 //Translate Hidden Div Up

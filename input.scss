@@ -17,6 +17,14 @@
     display: none; 
 }
 
+.gmnoprint {
+  display: none;
+}
+
+.gm-style button {
+  display: none;
+}
+
 $green: #0F5440;
 $pink: #EAAFB9;
 
@@ -163,7 +171,7 @@ input[type="radio"] {
 
 .box__face {
   position: absolute;
-   border: 1px solid black;
+   border: 2px solid $pink;
   font-size: 40px;
   font-weight: bold;
   text-align: center;
@@ -369,6 +377,13 @@ label { margin-right: 10px; }
   grid-template-rows: 1fr;
 }
 
+.map-container hr {
+  position: relative;
+  border-color: $pink;
+  margin: 0;
+  width: 92%;
+}
+
 .map-container-left {
   font-size: 20px;
   font-family: 'GT-America';
@@ -378,7 +393,7 @@ label { margin-right: 10px; }
 
 .map-container-left ul {
   text-align: left;
-  margin-left: 25px;
+  margin-left: 0px;
   padding: 0;
   line-height: 0px;
 }
@@ -387,16 +402,30 @@ label { margin-right: 10px; }
   text-align: left;
   height: 40px;
   margin: 0;
-  padding: 0;
+  padding-left: 25px;
 }
 
 .map-list-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 92%;
   font-family: 'Druk-Wide-Medium';
   text-align: left;
-  margin-left: 25px;
-  margin-top: 25px;
-  padding: 0;
   line-height: 25px;
+}
+
+.map-list-title span:nth-child(1) {
+  margin-left: 25px;
+}
+
+.map-list-title span:nth-child(2) {
+  // margin-right: 25px;
+}
+
+.map-list-title img {
+  height: 40px;
+  width: 40px
 }
 
 
@@ -477,9 +506,11 @@ label { margin-right: 10px; }
   max-width: 70%
 }
 
-hr {
+.news-loaded-container hr {
   position: relative;
   border-color: $pink;
+  margin: 0;
+  width: 100%;
 }
 
 #map {

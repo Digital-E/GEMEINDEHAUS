@@ -1,3 +1,96 @@
+//Riot.JS Routing
+
+route.start(true);
+
+// matches to link
+
+route(function(event, id) {
+
+  Prismic.api("https://gemindehaus.cdn.prismic.io/api/v2").then(function(api) {
+    return api.getByID(id);
+}).then(function(response) {
+    console.log("Documents: ", response);
+    loadEventToDom(response);
+}, function(err) {
+    console.log("Something went wrong: ", err);
+});
+
+
+
+})
+
+
+//Back-end Code
+
+
+Prismic.api("https://gemindehaus.cdn.prismic.io/api/v2").then(function(api) {
+    return api.query(
+      Prismic.Predicates.at('document.type', 'blog-post'),
+    { orderings : '[my.blog-post.date desc]' }
+    ); // An empty query will return all the documents
+}).then(function(response) {
+    console.log("Documents: ", response.results);
+
+    response.results.forEach(item => {
+      addToDom(item);
+    });
+
+}, function(err) {
+    console.log("Something went wrong: ", err);
+});
+
+function addToDom(response) {
+  console.log(response);
+
+  //var dateReformat = response.rawJSON.date.split('-').reverse().join('/');
+
+  //Get Date and make Array
+  var dateReformatPrePre = response.rawJSON.date.split('-').reverse();
+
+  //Remove Two First Digits From Year
+  var reformatYear = dateReformatPrePre[2].split('').splice(2,2).join('');
+
+  //Remove Pre-Formatted Year From Date
+  var dateReformatPre = dateReformatPrePre.splice(0,2);
+
+  //Add reformatYear to Array
+  dateReformatPre.push(reformatYear);
+
+  //Join reFormatted Array
+  var dateReformat = dateReformatPre.join('/');
+
+
+  var eventsList = document.querySelectorAll('.news-elements');
+  var newEventNode = document.createElement('div');
+  var span = document.createElement('span');
+  span.innerHTML = `${response.rawJSON.title[0].text}`;
+  var span2 = document.createElement('span');
+  var span3 = document.createElement('span');
+  span3.innerHTML = dateReformat;
+  var span4 = document.createElement('span');
+  span4.innerHTML = `${response.rawJSON.tag[0].text}`;
+
+  newEventNode.className = 'news-element';
+  newEventNode.id = `${response.id}`;
+
+  span2.appendChild(span3);
+  span2.appendChild(span4);
+
+  span2.classList.add('news-element-flex');
+
+  newEventNode.appendChild(span);
+  newEventNode.appendChild(span2);
+
+  newEventNode.addEventListener('click', function(){
+    clickEvent(newEventNode);
+  })
+
+  eventsList[0].appendChild(newEventNode);
+
+};
+
+
+//Animation Code
 
 var frontFace = document.querySelector('.box__face--front');
 var scene = document.querySelector('.scene');
@@ -120,7 +213,6 @@ function expand(currentClass, closed) {
 
       box.children[index].style.overflow = 'hidden';
         
-      document.addEventListener('mousemove', moveFunction);
       
       setTimeout(function(){
           cubeContainer.classList.remove('expand--cube')
@@ -131,6 +223,10 @@ function expand(currentClass, closed) {
             box.children[i].style.visibility = "visible";
               }  
             },1000);
+      
+      setTimeout(function(){
+        document.addEventListener('mousemove', moveFunction);
+      },1000);
 
     } else {
         
@@ -171,16 +267,20 @@ function expand(currentClass, closed) {
 var newsElements = document.querySelectorAll('.news-element');
 var backButton = document.querySelector('.back-button');
 
-newsElements.forEach((element) => {
-    element.addEventListener('click', function(){
-        TweenMax.staggerTo(".header-subelement", 1.5, {y:'-100%', ease:Power2.easeInOut}, 0.1);
+// newsElements.forEach((element) => {
+//     element.addEventListener('click', function(){
+//         TweenMax.staggerTo(".header-subelement", 1.5, {y:'-100%', ease:Power2.easeInOut}, 0.1);
 
-        TweenMax.staggerFromTo(".loaded-subelement", 2,{y:'100%'}, {y:'0%', ease: Circ.easeOut}, 0.1)
-    })
-});
+//         TweenMax.staggerFromTo(".loaded-subelement", 2,{y:'100%'}, {y:'0%', ease: Circ.easeOut}, 0.1)
+//     })
+// });
 
 backButton.addEventListener('click', function(){
+
+        history.pushState(null, null, '/');
+        
         TweenMax.staggerTo(".header-subelement", 2, {y:'0%', ease:Power2.easeInOut}, 0);
+        
 });
 
 

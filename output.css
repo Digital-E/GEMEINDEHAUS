@@ -14,6 +14,14 @@
   display: none;
 }
 
+.close-button {
+  width: 25px;
+  height: 25px;
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+
 .gmnoprint {
   display: none;
 }

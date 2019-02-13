@@ -1,7 +1,3 @@
-// var locationURL = window.location.href;
-
-// console.log(locationURL.split('/'));
-
 function clickEvent(newEventNode) {
 
     var id = newEventNode.getAttribute('id');

@@ -6,16 +6,24 @@ route.start(true);
 
 route(function(event, id) {
 
-  Prismic.api("https://gemindehaus.cdn.prismic.io/api/v2").then(function(api) {
-    return api.getByID(id);
-}).then(function(response) {
-    console.log("Documents: ", response);
-    loadEventToDom(response);
-}, function(err) {
-    console.log("Something went wrong: ", err);
-});
+  if(id) {
 
+    Prismic.api("https://gemindehaus.cdn.prismic.io/api/v2").then(function(api) {
+      return api.getByID(id);
+  }).then(function(response) {
+      console.log("Documents: ", response);
+      loadEventToDom(response);
+  }, function(err) {
+      console.log("Something went wrong: ", err);
+  });
 
+  } else {
+
+    history.pushState(null, null, '/');
+        
+    TweenMax.staggerTo(".header-subelement", 2, {y:'0%', ease:Power2.easeInOut}, 0);
+
+  }
 
 })
 
@@ -211,7 +219,8 @@ function expand(currentClass, closed) {
       box.children[index].classList.remove(`box__face--${faceName}--expanded`);
       box.children[index].classList.remove('box--expanded');
 
-      box.children[index].style.overflow = 'hidden';
+      if (index !==1)
+      box.children[index].children[1].style.overflow = 'hidden';
         
       
       setTimeout(function(){
@@ -245,7 +254,8 @@ function expand(currentClass, closed) {
         box.children[index].classList.add('box--expanded');
         box.children[index].classList.add(`box__face--${faceName}--expanded`);
           
-        box.children[index].style.overflow = 'auto';
+        if (index !==1)
+        box.children[index].children[1].style.overflow = 'auto';
   
         cubeContainer.classList.add('expand--cube'); 
   

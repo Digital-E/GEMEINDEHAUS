@@ -17,12 +17,23 @@
     display: none; 
 }
 
+.inner-scroll-div {
+  height: 100%;
+}
+
 .close-button {
   width: 25px;
   height: 25px;
-  position: fixed;
-  top:0;
-  right:0
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 999;
+}
+
+.close-button img {
+  position: relative;
+  z-index: 999;
 }
 
 .gmnoprint {
@@ -130,7 +141,7 @@ input[type="radio"] {
 }
 
 .back-button {
-    position: fixed;
+    position: absolute;
     margin-top: 25px;
     margin-left: 25px;
     z-index: 999;
@@ -296,38 +307,40 @@ label { margin-right: 10px; }
 };
 
 .box__face--front--expanded {
-  overflow: scroll;
+  // overflow: scroll;
   z-index: 999;
 }
 
 .box__face--right--expanded {
-  overflow: scroll;
+  // overflow: scroll;
   z-index: 999;
 }
 
 .box__face--back--expanded {
-  overflow: scroll;
+  // overflow: scroll;
   z-index: 999;
 }
 
 .box__face--left--expanded {
-  overflow: scroll;
+  // overflow: scroll;
   z-index: 999;
 }
 
 .box__face--top--expanded {
-  overflow: scroll;
+  // overflow: scroll;
   z-index: 999;
 }
 
 .box__face--bottom--expanded {
-  overflow: scroll;
+  // overflow: scroll;
   z-index: 999;
 }
 
 .expand--cube {
     height: calc(100vh - 100px);
     width: calc(100vw - 100px);
+    max-height: 600px;
+    max-width: 700px;
     transition-duration: 1s;
     position: fixed;
     left: 50%;

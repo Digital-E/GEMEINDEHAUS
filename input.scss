@@ -36,6 +36,14 @@
   z-index: 999;
 }
 
+.info-text {
+  font-family: 'GT-America';
+  font-size: 12px;
+  line-height: 20px;
+  text-align: left;
+  margin: 25px;
+}
+
 .gmnoprint {
   display: none;
 }
@@ -339,8 +347,8 @@ label { margin-right: 10px; }
 .expand--cube {
     height: calc(100vh - 100px);
     width: calc(100vw - 100px);
-    max-height: 600px;
-    max-width: 700px;
+    max-height: 700px;
+    max-width: 1000px;
     transition-duration: 1s;
     position: fixed;
     left: 50%;
@@ -365,6 +373,9 @@ label { margin-right: 10px; }
     background-position: center;
     background-size: cover;
     min-height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .neighbourhood-image {
@@ -372,6 +383,9 @@ label { margin-right: 10px; }
   background-position: center;
   background-size: cover;
   min-height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .info-image {
@@ -379,6 +393,9 @@ label { margin-right: 10px; }
   background-position: center;
   background-size: cover;
   min-height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .calendar-image {
@@ -386,6 +403,9 @@ label { margin-right: 10px; }
   background-position: center;
   background-size: cover;
   min-height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .map-container {

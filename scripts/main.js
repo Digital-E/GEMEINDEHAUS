@@ -118,11 +118,12 @@ var closed;
   var checkedRadio = radioGroup.querySelector(':checked');
   var showClass = 'show-' + checkedRadio.value;
   box.style.transform = '';
+  
   document.removeEventListener('mousemove', moveFunction);
 
   if(isExpanded) {
+
     expand();
-    document.removeEventListener('mousemove', moveFunction);
     setTimeout(function(){
           if ( currentClass ) {
       box.classList.remove( currentClass );
@@ -136,7 +137,7 @@ var closed;
       expand(checkedRadio.value);
    }, 2000);
   } else {
-      
+    
     if ( currentClass ) {
       box.classList.remove( currentClass );
     }
@@ -167,6 +168,11 @@ for(var i = 0; i < closeButtons.length; i++) {
 function closeAll() {
   // closed = "closed";
   expand("", "closed");
+
+  setTimeout(function(){
+    document.addEventListener('mousemove', moveFunction);
+  },1000);
+  
 };
 
 // Full Screen On Div Click
@@ -233,9 +239,9 @@ function expand(currentClass, closed) {
               }  
             },1000);
       
-      setTimeout(function(){
-        document.addEventListener('mousemove', moveFunction);
-      },1000);
+      // setTimeout(function(){
+      //   document.addEventListener('mousemove', moveFunction);
+      // },1000);
 
     } else {
         
@@ -243,6 +249,7 @@ function expand(currentClass, closed) {
           box.children[i].style.visibility = 'hidden';
           box.children[index].style.visibility = 'visible';
       }
+      document.removeEventListener('mousemove', moveFunction);
         
       // box.classList.add(`${faceName}--box--expanded`);
 
@@ -259,7 +266,7 @@ function expand(currentClass, closed) {
   
         cubeContainer.classList.add('expand--cube'); 
   
-        document.removeEventListener('mousemove', moveFunction);
+        // document.removeEventListener('mousemove', moveFunction);
   
         isExpanded = box.children[index].classList[2];
       },1000);

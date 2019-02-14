@@ -115,6 +115,7 @@ var closed;
 
  function changeSide() {
 
+
   var checkedRadio = radioGroup.querySelector(':checked');
   var showClass = 'show-' + checkedRadio.value;
   box.style.transform = '';
@@ -172,7 +173,7 @@ function closeAll() {
   setTimeout(function(){
     document.addEventListener('mousemove', moveFunction);
   },1000);
-  
+
 };
 
 // Full Screen On Div Click
@@ -185,6 +186,21 @@ function expand(currentClass, closed) {
   var index;
 
   closed = closed;
+
+  var overlay = document.querySelector('.overlay');
+
+  if(overlay.style.visibility == "visible") {
+    overlay.style.visibility = "hidden";
+    document.querySelector('.news-elements').style.filter = 'blur(0px)';
+    document.querySelector('.radio-group').style.filter = 'blur(0px)';
+    document.querySelector('.impressum-button').style.filter = 'blur(0px)';
+
+  } else {
+    overlay.style.visibility = "visible";
+    document.querySelector('.news-elements').style.filter = 'blur(10px)';
+    document.querySelector('.radio-group').style.filter = 'blur(10px)';
+    document.querySelector('.impressum-button').style.filter = 'blur(10px)';
+  }
 
   if(currentClass) {
     faceName = currentClass;
@@ -300,6 +316,25 @@ backButton.addEventListener('click', function(){
         
 });
 
+// Translate Impressum Div Right
+
+var impressumButton = document.querySelector('.impressum-button');
+var impressumContent = document.querySelector('.impressum-content');
+
+impressumButton.addEventListener('click', function() {
+
+  TweenMax.staggerTo(".header-subelement", 2, {y:'20%', ease:Power2.easeInOut}, 0);
+  impressumContent.style.zIndex = "999";
+  TweenMax.to(".impressum-content",2, {y:'25%', ease:Power2.easeInOut});
+
+  window.addEventListener('scroll', function(){
+    TweenMax.staggerTo(".header-subelement", 0.5, {y:'0%', ease:Power2.easeOut}, 0);
+    impressumContent.style.zIndex = "0";
+    TweenMax.to(".impressum-content",0.2, {y:'-200%', ease:Power2.easeIn});
+  });
+
+});
+
 
 //Mouse Move Cube
 
@@ -320,8 +355,8 @@ function moveFunction(e) {
     var rotX;
     var rotY;
     
-        rotX = (centerY - e.clientY) * (100 / windowHeight) * 0.5;
-        rotY = (centerX - e.clientX) * (100 / windowWidth) * 0.5;
+        rotX = (centerY - e.clientY) * (100 / windowHeight) * 0.8;
+        rotY = (centerX - e.clientX) * (100 / windowWidth) * 0.8;
         
         box.style.transform = `translateZ(-200px) rotateX(${rotX}deg) rotateY(${-rotY}deg)`;
 };

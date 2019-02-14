@@ -25,8 +25,7 @@ function loadEventToDom(response) {
 
     //Get Title Div
     var newsLoadedContentTopContainerContent = document.querySelector('.news-loaded-content-top-container-content');
-
-    console.log(newsLoadedContentTopContainerContent.children[0]);
+    console.log(newsLoadedContentTopContainerContent);
 
     //Change Title
     newsLoadedContentTopContainerContent.children[0].innerHTML = `${response.rawJSON.title[0].text}`;
@@ -38,7 +37,6 @@ function loadEventToDom(response) {
     newsLoadedContentTopContainerContent.children[2].innerHTML = `${response.rawJSON.tag[0].text}`;
 
     //Change Link
-    console.log();
     newsLoadedContentTopContainerContent.children[3].children[0].removeAttribute('href');
     newsLoadedContentTopContainerContent.children[3].children[0].setAttribute('href', `${response.rawJSON.link.url}` );
 

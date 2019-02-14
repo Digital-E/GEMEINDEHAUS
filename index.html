@@ -2,7 +2,8 @@
 <html>
 	<head>
 		<meta charset=utf-8>
-		<title>Gemeindehaus</title>
+        <title>Gemeindehaus — Creative Workspace</title>
+        <link rel="icon" type="image/png" href="images/favicon.png">
 		<link rel="stylesheet" href="./reset.css">
         <link rel="stylesheet" href="./output.css">
 
@@ -16,7 +17,25 @@
 
 	</head>
     <body>
+        <div class="impressum-button">Impressum</div>
+        <div class="impressum-content">
+                Angaben gemäß § 5 TMG:<br/>
+                Karl Anders GmbH<br/>
+                Brunnenhofstrasse 2<br/>
+                22767 Hamburg
+                <br/>
+                <br/>
+                Vertreten durch:<br/>
+                Claudia Fischer-Appelt, Lars Kreyenhagen
+                <br/>
+                <br/>
+                Kontakt<br/>
+                Telefon: +49 40-209 32 11 99<br/>
+                Telefax: +49 40-209 32 11 11<br/>
+                E-Mail: hi@karlanders.io
+        </div>
         <div class="header header-subelement">
+            
         <div class="radio-group header-subelement">
             <div>
                 <label>
@@ -27,9 +46,9 @@
                 </label>
             </div>
             <div>
-                <label>
-                    <!-- <input type="radio" name="rotate-cube-side" value="front" checked /> home -->
-                </label>
+                <!-- <label>
+                    <input type="radio" name="rotate-cube-side" value="front" checked /> Impressum
+                </label> -->
                 <label>
                     <input type="radio" name="rotate-cube-side" value="right" /> Spaces
                 </label>
@@ -47,6 +66,7 @@
                 </label>
             </div>
         </div> 
+        <div class="overlay"></div>
         <div class="news-container header-subelement">
             <div class="news-elements">
             <div class="news-element-top-div">
@@ -149,12 +169,97 @@
             <div class="close-button"><img src="./images/cross.svg"></div>
                 <div class="inner-scroll-div">
                     <div class="spaces-image">SPACES</div>
+
+                    <div class="space-container">
+                        
+                                <img src="./images/spaces/1.png" alt="">
+
+                            <div class="space-container-text">
+                                  Emporeem <br/>
+                            <span class="space-container-subtext">
+                                It's Magic! Alles transparent!
+                                4 Personen können sich hier ganz entspannt gegenseitig
+                                von der Arbeit ablenken.
+                            </span>  
+                            <div class="contact-button">Contact</div>
+                            </div>
+                    </div>
+                    <hr/>
+                    <div class="space-container">
+                            
+                                <img src="./images/spaces/2.png" alt="">
+                            
+                            <div class="space-container-text">
+                                  Gemeindesaal <br/>
+                            <span class="space-container-subtext">
+                                It's Magic! Alles transparent!
+                                4 Personen können sich hier ganz entspannt gegenseitig
+                                von der Arbeit ablenken.
+                            </span>  
+                            <div class="contact-button">Contact</div>
+                            </div>
+                        </div>
+                    <hr/> 
+                    <div class="space-container">
+                            
+                                <img src="./images/spaces/3.png" alt="">
+                            
+                            <div class="space-container-text">
+                                  Pastora <br/>
+                            <span class="space-container-subtext">
+                                It's Magic! Alles transparent!
+                                4 Personen können sich hier ganz entspannt gegenseitig
+                                von der Arbeit ablenken.
+                            </span>  
+                            <div class="contact-button">Contact</div>
+                            </div>
+                        </div>
+                    <hr/>     
+                    <div class="space-container">
+                            
+                                <img src="./images/spaces/4.png" alt="">
+                            
+                            <div class="space-container-text">
+                                  Audienz <br/>
+                            <span class="space-container-subtext">
+                                It's Magic! Alles transparent!
+                                4 Personen können sich hier ganz entspannt gegenseitig
+                                von der Arbeit ablenken.
+                            </span>  
+                            <div class="contact-button">Contact</div>
+                            </div>
+                        </div>
+                    <hr/> 
+                    <div class="space-container">
+                            
+                                <img src="./images/spaces/5.png" alt="">
+                            
+                            <div class="space-container-text">
+                                  Anzleik <br/>
+                            <span class="space-container-subtext">
+                                It's Magic! Alles transparent!
+                                4 Personen können sich hier ganz entspannt gegenseitig
+                                von der Arbeit ablenken.
+                            </span>  
+                            <div class="contact-button">Contact</div>
+                            </div>
+                        </div>
+           
                 </div>
           </div>
           <div class="box__face box__face--left">
-            <div class="prices-image"></div>
-            PREISE
-            <div class="close-button">close</div>
+            <div class="close-button"><img src="./images/cross.svg"></div>
+                <div class="inner-scroll-div">
+                    <div class="prices-image">PREISE</div>
+                    <div class="info-text">
+                            Je nach Bedarf findest du im Gemeindehaus sowohl Einzelplätze als auch ganze Büros für Teamcrews. Pro Schreibtisch — all inclusive — berechnen wir im Monat:
+                    </div>
+                    <!-- <img class="price-gif" src="./images/price.gif"> -->
+                    <video width="100%" height="600px" autoplay loop>
+                            <source src="./images/prices-video.mp4" type="video/mp4">
+                          Your browser does not support the video tag.
+                          </video>
+                </div>
           </div>
           <div class="box__face box__face--top">
             <div class="close-button"><img src="./images/cross.svg"></div>
@@ -163,7 +268,7 @@
                      <div class="info-text">
                      <br/>
                      <br/>
-                     NEXT LEVEL OF COWORKING
+                     <span class="next-level">NEXT LEVEL OF COWORKING</span>
                      <br/>
                      <br/>
                      Ob kreative Ekstase oder kontemplative Stille, Konzentration oder Zerstreuung, Sekt oder Selters. Im Gemeindehaus tut jeder, was er am besten kann, wofür er brennt, was er liebt. Kreative Künstler sind ebenso willkommen wie kulturelle Kommerzler: Hier kommt jeder rein, der nicht mutterseelenallein zuhause vor sich hin ackern möchte. Oder keine Lust auf sterile Hotelatmosphäre hat. Und das beste: Auf den vielseitigen Workspaces kann man sich einrichten, wie man mag. Sticker und Familienfotos inklusive.Sharing is caring!
@@ -178,6 +283,48 @@
             <div class="close-button"><img src="./images/cross.svg"></div>
                 <div class="inner-scroll-div">
                     <div class="calendar-image">Kalender</div>
+
+                    <div class="kalender-container">
+                            <div class="kalender-content">
+                                <span class="news-loaded-content-top-container-title">EVENT1</span>
+                                <span class="news-loaded-content-top-container-date">01/03/19</span>
+                                <span class="news-loaded-content-top-container-tag">#NETWORKING</span>
+                                <span class="news-loaded-content-top-container-share">
+                                    <a target="_blank" href="">
+                                        <img src="./link.svg" alt="">
+                                    </a>
+                                </span>
+                            </div>
+                            <hr/>
+
+                        <div class="kalender-content">
+                            <span class="news-loaded-content-top-container-title">EVENT2</span>
+                            <span class="news-loaded-content-top-container-date">01/03/19</span>
+                            <span class="news-loaded-content-top-container-tag">#NETWORKING</span>
+                            <span class="news-loaded-content-top-container-share">
+                                <a target="_blank" href="">
+                                    <img src="./link.svg" alt="">
+                                </a>
+                            </span>
+                        </div>
+                        <hr/>
+
+
+                        <div class="kalender-content">
+                                <span class="news-loaded-content-top-container-title">AFTERWORK</span>
+                                <span class="news-loaded-content-top-container-date">01/03/19</span>
+                                <span class="news-loaded-content-top-container-tag">#NETWORKING</span>
+                                <span class="news-loaded-content-top-container-share">
+                                    <a target="_blank" href="">
+                                        <img src="./link.svg" alt="">
+                                    </a>
+                                </span>
+                            </div>
+                            <hr/>                        
+                    
+                    
+                    </div>                        
+
                 </div>
           </div>
         </div>

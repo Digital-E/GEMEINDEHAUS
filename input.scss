@@ -41,6 +41,10 @@
   align-items: center;
 }
 
+.kalender-content span:nth-child(n+2) {
+  margin-top: 15px;
+}
+
 .space-container {
   position: relative;
   display: grid;
@@ -198,6 +202,11 @@ input[type="radio"] {
     margin-left: 40px;
 }
 
+.news-container hr {
+  border-color: $green;
+  width: 89%;
+}
+
 
 .news-elements {
     position: relative;
@@ -210,7 +219,7 @@ input[type="radio"] {
 .news-element {
     position: relative;
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: 1fr 0.3fr;
     max-width: 1200px;
     margin-top: 15px
 }
@@ -648,6 +657,10 @@ label:nth-child(1) {
   align-items: center;
 }
 
+.news-loaded-content-top-container-content span:nth-child(n+2) {
+  margin-top: 15px;
+}
+
 .news-loaded-content-top-container-date {
   font-size: 24px;
   font-family: 'GT-America';
@@ -692,6 +705,7 @@ label:nth-child(1) {
   border-color: $pink;
   margin: 0;
   width: 100%;
+  border-style: solid;
 }
 
 #map {

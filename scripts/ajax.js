@@ -20,8 +20,22 @@ function loadEventToDom(response) {
 
      route(`events/${response.id}`);
 
-    //Date Reformat
-    var dateReformat = response.rawJSON.date.split('-').reverse().join('/');
+    // var dateReformat = response.rawJSON.date.split('-').reverse().join('/');
+
+    //Get Date and make Array
+    var dateReformatPrePre = response.rawJSON.date.split('-').reverse();
+
+    //Remove Two First Digits From Year
+    var reformatYear = dateReformatPrePre[2].split('').splice(2,2).join('');
+
+    //Remove Pre-Formatted Year From Date
+    var dateReformatPre = dateReformatPrePre.splice(0,2);
+
+    //Add reformatYear to Array
+    dateReformatPre.push(reformatYear);
+
+    //Join reFormatted Array
+    var dateReformat = dateReformatPre.join('/');
 
     //Get Title Div
     var newsLoadedContentTopContainerContent = document.querySelector('.news-loaded-content-top-container-content');

@@ -700,7 +700,7 @@ label:nth-child(1) {
 
 .map-list-grid-title {
   font-family: "Druk-Wide-Medium";
-  font-size: 14px;
+  font-size: 18px;
   align-self: center;
   justify-self: flex-start;
   line-height: 25px;
@@ -713,7 +713,7 @@ label:nth-child(1) {
   text-align: left;
   justify-self: flex-start;
   align-self: flex-start;
-  line-height: 25px;
+  line-height: 18px;
 }
 
 .news-loaded-container {

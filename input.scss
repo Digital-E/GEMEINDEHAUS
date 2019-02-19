@@ -627,9 +627,7 @@ label:nth-child(1) {
 
 .map-list-grid-item {
   display: grid;
-  // grid-template-rows: 150px 25px 150px;
   grid-template-rows: 150px 35px auto;
-  // grid-template-columns: 150px;
 }
 
 .map-list-grid-image {
@@ -696,8 +694,7 @@ label:nth-child(1) {
 
 .map-list-grid-title {
   font-family: 'Druk-Wide-Medium';
-  font-size: 14px;
-  // grid-row: 2/3;
+  font-size: 18px;
   align-self: center;
   justify-self: flex-start;
   line-height: 25px;
@@ -708,11 +705,9 @@ label:nth-child(1) {
   font-family: 'GT-America';
   font-size: 12px;
   text-align: left;
-  // grid-row: 3/4;
-  // align-self: center;
   justify-self: flex-start;
   align-self: flex-start;
-  line-height: 25px;
+  line-height: 18px;
 }
 
 

@@ -16,11 +16,7 @@ function clickEvent(newEventNode) {
 
 function loadEventToDom(response) {
 
-    // history.pushState(null, `${response.slug}`, `events/${response.slug}`);
-
      route(`events/${response.id}`);
-
-    // var dateReformat = response.rawJSON.date.split('-').reverse().join('/');
 
     //Get Date and make Array
     var dateReformatPrePre = response.rawJSON.date.split('-').reverse();

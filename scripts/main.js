@@ -113,14 +113,45 @@ let cubeContainer = box.parentElement.parentElement;
 var isExpanded;
 var closed;
 
- function changeSide() {
+var index;
 
+ function changeSide() {
 
   var checkedRadio = radioGroup.querySelector(':checked');
   var showClass = 'show-' + checkedRadio.value;
   box.style.transform = '';
   
   document.removeEventListener('mousemove', moveFunction);
+
+  //Hide All Sides Except Shown Side
+
+  if(checkedRadio.value) {
+    faceName = checkedRadio.value;
+  };
+    
+    if (faceName == 'front') {
+        index = 0;
+        }
+    else if (faceName == 'back') {
+        index = 1;
+    }
+    else if (faceName == 'right') {
+         index = 2;    
+    }
+    else if (faceName == 'left') {
+        index = 3;
+    }
+    else if (faceName == 'top') {
+        index = 4;
+    }
+    else {
+        index = 5;
+    }
+
+    for(i = 0; i < box.children.length; i++) {
+        box.children[i].style.visibility = 'hidden';
+        box.children[index].style.visibility = 'visible';
+      }
 
   if(isExpanded) {
 
@@ -156,7 +187,6 @@ var closed;
 
  radioGroup.addEventListener( 'change', changeSide );
 
-//samuel code
 
 //Close All on Close Button Click 
 
@@ -167,7 +197,7 @@ for(var i = 0; i < closeButtons.length; i++) {
 }
 
 function closeAll() {
-  // closed = "closed";
+
   expand("", "closed");
 
   setTimeout(function(){
@@ -178,12 +208,7 @@ function closeAll() {
 
 // Full Screen On Div Click
 
-let boxChildren = box.children;
-
-
 function expand(currentClass, closed) {
-
-  var index;
 
   closed = closed;
 
@@ -202,42 +227,16 @@ function expand(currentClass, closed) {
     document.querySelector('.impressum-button').style.filter = 'blur(10px)';
   }
 
-  if(currentClass) {
-    faceName = currentClass;
-  };
-    
-    if (faceName == 'front') {
-        index = 0;
-        }
-    else if (faceName == 'back') {
-        index = 1;
-    }
-    else if (faceName == 'right') {
-         index = 2;    
-    }
-    else if (faceName == 'left') {
-        index = 3;
-    }
-    else if (faceName == 'top') {
-        index = 4;
-    }
-    else {
-        index = 5;
-    }
-
     isExpanded = box.children[index].classList[2];
+
+    
     
     if(isExpanded) {
         
       scene.classList.add('scene');
       scene.classList.remove(`${faceName}--scene--expand`);
       scene.classList.remove('expanded');
-
-      // box.classList.remove('box--expanded');
-      // box.classList.remove(`${faceName}--box--expanded`);
-      // box.classList.remove(`show-${faceName}`);
         
-
       box.children[index].classList.remove(`box__face--${faceName}--expanded`);
       box.children[index].classList.remove('box--expanded');
 
@@ -254,20 +253,10 @@ function expand(currentClass, closed) {
             box.children[i].style.visibility = "visible";
               }  
             },1000);
-      
-      // setTimeout(function(){
-      //   document.addEventListener('mousemove', moveFunction);
-      // },1000);
 
     } else {
-        
-      for(i = 0; i < box.children.length; i++) {
-          box.children[i].style.visibility = 'hidden';
-          box.children[index].style.visibility = 'visible';
-      }
+
       document.removeEventListener('mousemove', moveFunction);
-        
-      // box.classList.add(`${faceName}--box--expanded`);
 
       setTimeout(function(){
         scene.classList.remove('scene');
@@ -282,10 +271,8 @@ function expand(currentClass, closed) {
   
         cubeContainer.classList.add('expand--cube'); 
   
-        // document.removeEventListener('mousemove', moveFunction);
-  
         isExpanded = box.children[index].classList[2];
-      },1000);
+      },0);
     }
 
     if(closed) {

@@ -165,23 +165,44 @@ input[type="radio"] {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 20px;
+    font-size: 14px;
     bottom: 0;
     right: 0;
     width: 100vh;
-    margin-right: 40px;
-    // margin-bottom: 30px;
+    margin-right: 25px;
     transform: rotateZ(90deg);
     transform-origin: bottom right;
     color: $green;
     z-index: 997;
     transition-duration: 2s;
+
+    @media(min-width: 576px) {
+      position: fixed;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 20px;
+      bottom: 0;
+      right: 0;
+      width: 100vh;
+      margin-right: 40px;
+      transform: rotateZ(90deg);
+      transform-origin: bottom right;
+      color: $green;
+      z-index: 997;
+      transition-duration: 2s;
+    }
 }
 
 .radio-group img {
-  height: 25px;
-  width: 25px;
+  height: 15px;
+  width: 15px;
   transform: rotate(-90deg);
+
+  @media(min-width: 576px) {
+    height: 25px;
+    width: 25px;
+  }
 }
 
 .cube-container {
@@ -199,12 +220,17 @@ input[type="radio"] {
     height: 100vh;
     font-size: 70px;
     background-color: $pink;
-    margin-left: 40px;
+    margin-left: 10px;
+
+    @media(min-width: 576px) {
+      margin-left: 40px;
+    }
 }
 
 .news-container hr {
   border-color: $green;
   width: 89%;
+  border-width: 0.5px;
 }
 
 
@@ -218,12 +244,22 @@ input[type="radio"] {
 
 .news-element {
     position: relative;
+    font-size: 20px;
     display: grid;
     grid-template-columns: 1fr 0.3fr;
-    max-width: 1200px;
+    max-width: calc(100vw - 60px);
     margin-top: 15px;
-    padding-left: 10px;
+    padding-left: 2px;
 
+    @media(min-width: 576px) {
+      position: relative;
+      font-size: 72px;
+      display: grid;
+      grid-template-columns: 1fr 0.3fr;
+      max-width: 1200px;
+      margin-top: 15px;
+      padding-left: 2px;
+    }
 }
 
 .news-element:hover {
@@ -232,11 +268,15 @@ input[type="radio"] {
 
 .news-element-flex {
     display: flex;
-    font-size: 24px;
+    font-size: 8px;
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
     font-family: 'GT-America';
+
+    @media(min-width: 576px) {
+      font-size: 24px;
+    }
 }
 
 .news-element-flex:nth-child(2) span:nth-child(1) {
@@ -268,10 +308,15 @@ input[type="radio"] {
     width: 600px;
     left: 50%;
     top: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%) scale(0.4);
     display: flex;
-  justify-content: center;
-  align-items: center;
+    justify-content: center;
+    align-items: center;
+    transition-duration: 1s;
+
+    @media (min-width: 576px) {
+      transform: translate(-50%,-50%);
+    }
 }
 
 .scene {
@@ -379,6 +424,7 @@ label:nth-child(1) {
 
 .impressum-button {
   position: fixed;
+  font-size: 14px;
   transform-origin: bottom left;
   transform: rotate(-90deg);
   margin-left: 25px;
@@ -387,14 +433,24 @@ label:nth-child(1) {
   color: $green;
   z-index: 997;
   transition-duration: 2s;
+
+  @media(min-width: 576px) {
+    font-size: 18px;
+  }
 }
 
 .impressum-content {
   position: absolute;
+  font-size: 14px;
   color: $green;
   transform: translateY(-200%);
-  margin-left: 50px;
+  margin-left: 10px;
   z-index: 997;
+
+  @media(min-width: 576px) {
+    font-size: 24px;
+    margin-left: 50px;
+  }
 }
 
 // Samuel CSS
@@ -618,11 +674,15 @@ label:nth-child(1) {
 
 .map-list-grid-1, .map-list-grid-2, .map-list-grid-3,  {
   display: grid;
-  grid-template-columns: repeat(2,1fr);
+  grid-template-columns: 1fr;
   grid-template-rows: auto;
   row-gap: 50px;
   column-gap: 50px;
   margin: 25px 25px 25px 25px;
+
+  @media(min-width: 576px) {
+    grid-template-columns: repeat(2,1fr);
+  }
 }
 
 .map-list-grid-item {

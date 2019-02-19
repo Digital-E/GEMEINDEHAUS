@@ -8,7 +8,7 @@ route(function(event, id) {
 
   if(id) {
 
-    Prismic.api("https://gemindehaus.cdn.prismic.io/api/v2").then(function(api) {
+    Prismic.api("https://gemeindehaus.cdn.prismic.io/api/v2").then(function(api) {
       return api.getByID(id);
   }).then(function(response) {
       console.log("Documents: ", response);
@@ -31,7 +31,7 @@ route(function(event, id) {
 //Back-end Code
 
 
-Prismic.api("https://gemindehaus.cdn.prismic.io/api/v2").then(function(api) {
+Prismic.api("https://gemeindehaus.cdn.prismic.io/api/v2").then(function(api) {
     return api.query(
       Prismic.Predicates.at('document.type', 'blog-post'),
     { orderings : '[my.blog-post.date desc]' }
@@ -47,8 +47,24 @@ Prismic.api("https://gemindehaus.cdn.prismic.io/api/v2").then(function(api) {
     console.log("Something went wrong: ", err);
 });
 
+Prismic.api("https://gemeindehaus.cdn.prismic.io/api/v2").then(function(api) {
+    return api.query(
+      Prismic.Predicates.at('document.type', 'calendar-event'),
+    { orderings : '[my.calendar-event.date desc]' }
+    ); // An empty query will return all the documents
+}).then(function(response) {
+    console.log("Documents: ", response.results);
+
+    response.results.forEach(item => {
+      addToCalendar(item);
+    });
+
+}, function(err) {
+    console.log("Something went wrong: ", err);
+});
+
 function addToDom(response) {
-  console.log(response);
+  // console.log(response);
 
   //var dateReformat = response.rawJSON.date.split('-').reverse().join('/');
 
@@ -77,6 +93,7 @@ function addToDom(response) {
   span3.innerHTML = dateReformat;
   var span4 = document.createElement('span');
   span4.innerHTML = `${response.rawJSON.tag[0].text}`;
+  var hr = document.createElement('hr');
 
   newEventNode.className = 'news-element';
   newEventNode.id = `${response.id}`;
@@ -94,6 +111,69 @@ function addToDom(response) {
   })
 
   eventsList[0].appendChild(newEventNode);
+
+  newEventNode.parentNode.insertBefore(hr, newEventNode.nextSibling);
+
+};
+
+function addToCalendar(response) {
+  // console.log(response);
+
+  //var dateReformat = response.rawJSON.date.split('-').reverse().join('/');
+
+  //Get Date and make Array
+  var dateReformatPrePre = response.rawJSON.date.split('-').reverse();
+
+  //Remove Two First Digits From Year
+  var reformatYear = dateReformatPrePre[2].split('').splice(2,2).join('');
+
+  //Remove Pre-Formatted Year From Date
+  var dateReformatPre = dateReformatPrePre.splice(0,2);
+
+  //Add reformatYear to Array
+  dateReformatPre.push(reformatYear);
+
+  //Join reFormatted Array
+  var dateReformat = dateReformatPre.join('/');
+
+
+  var eventsList = document.querySelectorAll('.kalender-container');
+  var newEventNode = document.createElement('div');
+  var span = document.createElement('span');
+  span.innerHTML = `${response.rawJSON.title[0].text}`;
+ 
+  var span3 = document.createElement('span');
+  span3.innerHTML = dateReformat;
+  var span4 = document.createElement('span');
+  span4.innerHTML = `${response.rawJSON.tag[0].text}`;
+  var span5 = document.createElement('span');
+  var link = document.createElement('a');
+  link.innerHTML = '<img src="./link.svg" alt="">';
+  link.setAttribute('href', `${response.rawJSON.link.url}` );
+  span5.appendChild(link);
+  var hr = document.createElement('hr');
+
+  newEventNode.className = 'kalender-content';
+  newEventNode.id = `${response.id}`;
+
+  span.className = 'news-loaded-content-top-container-title';
+  span3.className = 'news-loaded-content-top-container-date';
+  span4.className = 'news-loaded-content-top-container-tag';
+  span5.className = 'news-loaded-content-top-container-share';
+
+  newEventNode.appendChild(span);
+  newEventNode.appendChild(span3);
+  newEventNode.appendChild(span4);
+  newEventNode.appendChild(span5);
+
+
+  newEventNode.addEventListener('click', function(){
+    clickEvent(newEventNode);
+  })
+
+  eventsList[0].appendChild(newEventNode);
+
+  newEventNode.parentNode.insertBefore(hr, newEventNode.nextSibling);
 
 };
 

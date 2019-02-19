@@ -2,7 +2,7 @@ function clickEvent(newEventNode) {
 
     var id = newEventNode.getAttribute('id');
 
-    Prismic.api("https://gemindehaus.cdn.prismic.io/api/v2").then(function(api) {
+    Prismic.api("https://gemeindehaus.cdn.prismic.io/api/v2").then(function(api) {
         return api.getByID(id);
     }).then(function(response) {
         console.log("Documents: ", response);

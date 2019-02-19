@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   src: url("./fonts/Druk-Wide-Medium.otf");
   font-family: "Druk-Wide-Medium";
@@ -209,6 +210,7 @@ input[type=radio] {
   grid-template-columns: 1fr 0.3fr;
   max-width: 1200px;
   margin-top: 15px;
+  padding-left: 10px;
 }
 
 .news-element:hover {
@@ -504,8 +506,8 @@ label:nth-child(1) {
 }
 
 .expand--cube {
-  height: calc(100vh - 100px);
-  width: calc(100vw - 100px);
+  height: calc(100vh - 50px);
+  width: calc(100vw - 50px);
   max-height: 700px;
   max-width: 1000px;
   transition-duration: 1s;
@@ -572,8 +574,14 @@ label:nth-child(1) {
   width: 100%;
   position: absolute;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+@media (min-width: 576px) {
+  .map-container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+  }
 }
 
 .map-container hr {
@@ -588,20 +596,12 @@ label:nth-child(1) {
   font-family: "GT-America";
   max-height: inherit;
   overflow: scroll;
+  grid-row: 2/3;
 }
-
-.map-container-left ul {
-  text-align: left;
-  margin-left: 0px;
-  padding: 0;
-  line-height: 0px;
-}
-
-.map-container-left ul li {
-  text-align: left;
-  height: 40px;
-  margin: 0;
-  padding-left: 25px;
+@media (min-width: 576px) {
+  .map-container-left {
+    grid-row: 1;
+  }
 }
 
 .map-list-title {
@@ -621,6 +621,99 @@ label:nth-child(1) {
 .map-list-title img {
   height: 40px;
   width: 40px;
+}
+
+.map-list-grid-1, .map-list-grid-2, .map-list-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  row-gap: 50px;
+  column-gap: 50px;
+  margin: 25px 25px 25px 25px;
+}
+
+.map-list-grid-item {
+  display: grid;
+  grid-template-rows: 150px 35px auto;
+}
+
+.map-list-grid-image {
+  background-position: center;
+  background-size: cover;
+}
+
+.map-list-grid-1 .map-list-grid-item:nth-child(1) .map-list-grid-image {
+  background-image: url("./images/kiez/Ume_no_hana.jpg");
+}
+
+.map-list-grid-1 .map-list-grid-item:nth-child(2) .map-list-grid-image {
+  background-image: url("./images/kiez/Kleine_Pause.jpg");
+}
+
+.map-list-grid-1 .map-list-grid-item:nth-child(3) .map-list-grid-image {
+  background-image: url("./images/kiez/Fritzis.jpg");
+}
+
+.map-list-grid-1 .map-list-grid-item:nth-child(4) .map-list-grid-image {
+  background-image: url("./images/kiez/Simbiosa.jpg");
+}
+
+.map-list-grid-1 .map-list-grid-item:nth-child(5) .map-list-grid-image {
+  background-image: url("./images/kiez/Slim_Jims.jpg");
+}
+
+.map-list-grid-2 .map-list-grid-item:nth-child(1) .map-list-grid-image {
+  background-image: url("./images/kiez/Cafe_Rolo.jpg");
+}
+
+.map-list-grid-2 .map-list-grid-item:nth-child(2) .map-list-grid-image {
+  background-image: url("./images/kiez/Kraweel.jpg");
+}
+
+.map-list-grid-2 .map-list-grid-item:nth-child(3) .map-list-grid-image {
+  background-image: url("./images/kiez/KandieShop.jpg");
+}
+
+.map-list-grid-2 .map-list-grid-item:nth-child(4) .map-list-grid-image {
+  background-image: url("./images/kiez/Tornqvist.jpg");
+}
+
+.map-list-grid-2 .map-list-grid-item:nth-child(5) .map-list-grid-image {
+  background-image: url("./images/kiez/The_Walrus_Bar.jpg");
+}
+
+.map-list-grid-3 .map-list-grid-item:nth-child(1) .map-list-grid-image {
+  background-image: url("./images/kiez/Gemüseladen.jpg");
+}
+
+.map-list-grid-3 .map-list-grid-item:nth-child(2) .map-list-grid-image {
+  background-image: url("./images/kiez/Edeka.jpg");
+}
+
+.map-list-grid-3 .map-list-grid-item:nth-child(3) .map-list-grid-image {
+  background-image: url("./images/kiez/Tabakbörse.jpg");
+}
+
+.map-list-grid-3 .map-list-grid-item:nth-child(4) .map-list-grid-image {
+  background-image: url("./images/kiez/Pick_and_Weight.jpg");
+}
+
+.map-list-grid-title {
+  font-family: "Druk-Wide-Medium";
+  font-size: 14px;
+  align-self: center;
+  justify-self: flex-start;
+  line-height: 25px;
+  text-align: left;
+}
+
+.map-list-grid-text {
+  font-family: "GT-America";
+  font-size: 12px;
+  text-align: left;
+  justify-self: flex-start;
+  align-self: flex-start;
+  line-height: 25px;
 }
 
 .news-loaded-container {

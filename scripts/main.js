@@ -409,28 +409,30 @@ document.addEventListener('mousemove', moveFunction);
 
 function moveFunction(e) {
     
-    var windowWidth = window.innerWidth;
-    var windowHeight = window.innerHeight;
+    // var windowWidth = window.innerWidth;
+    // var windowHeight = window.innerHeight;
         
-    var mouseX = e.clientX * 100 / windowWidth;
-    var mouseY = e.clientY * 100 / windowHeight;
+    // var mouseX = e.clientX * 100 / windowWidth;
+    // var mouseY = e.clientY * 100 / windowHeight;
     
-    var centerX = windowWidth / 2;
-    var centerY = windowHeight / 2;
+    // var centerX = windowWidth / 2;
+    // var centerY = windowHeight / 2;
     
     
-    var rotX;
-    var rotY;
+    // var rotX;
+    // var rotY;
     
-        rotX = (centerY - e.clientY) * (100 / windowHeight) * 0.8;
-        rotY = (centerX - e.clientX) * (100 / windowWidth) * 0.8;
+    //     rotX = (centerY - e.clientY) * (100 / windowHeight) * 0.8;
+    //     rotY = (centerX - e.clientX) * (100 / windowWidth) * 0.8;
         
-        box.style.transform = `translateZ(-200px) rotateX(${rotX}deg) rotateY(${-rotY}deg)`;
+    //     box.style.transform = `translateZ(-200px) rotateX(${rotX}deg) rotateY(${-rotY}deg)`;
 };
 
 //Accelerometer Move Cube
 
-window.addEventListener("deviceorientation", handleOrientation, true);
+if (window.DeviceOrientationEvent) {
+  window.addEventListener("deviceorientation", handleOrientation);
+}
 
 function handleOrientation(event) {
   var absolute = event.absolute;

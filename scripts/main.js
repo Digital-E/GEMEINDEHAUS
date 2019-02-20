@@ -443,10 +443,8 @@ function handleOrientation(event) {
   var rotX;
   var rotY;
   
-      rotX = (centerY - e.clientY) * (100 / windowHeight) * 0.8;
-      rotY = (centerX - e.clientX) * (100 / windowWidth) * 0.8;
+      // rotX = (centerY - e.clientY) * (100 / windowHeight) * 0.8;
+      // rotY = (centerX - e.clientX) * (100 / windowWidth) * 0.8;
       
-      setInterval(function(){
         box.style.transform = `translateZ(-200px) rotateX(${beta}deg) rotateY(${gamma}deg)`;
-      },1000)
 }

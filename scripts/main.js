@@ -427,3 +427,22 @@ function moveFunction(e) {
         
         box.style.transform = `translateZ(-200px) rotateX(${rotX}deg) rotateY(${-rotY}deg)`;
 };
+
+//Accelerometer Move Cube
+
+window.addEventListener("deviceorientation", handleOrientation, true);
+
+function handleOrientation(event) {
+  var absolute = event.absolute;
+  var alpha    = event.alpha;
+  var beta     = event.beta;
+  var gamma    = event.gamma;
+
+  var rotX;
+  var rotY;
+  
+      rotX = (centerY - e.clientY) * (100 / windowHeight) * 0.8;
+      rotY = (centerX - e.clientX) * (100 / windowWidth) * 0.8;
+      
+      box.style.transform = `translateZ(-200px) rotateX(${beta}deg) rotateY(${gamma}deg)`;
+}

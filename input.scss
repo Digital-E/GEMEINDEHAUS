@@ -206,11 +206,7 @@ input[type="radio"] {
 }
 
 .cube-container {
-    z-index: 998;
-
-    @media(min-width: 576px) {
       z-index: 999 !important;
-    }
 }
 
 .header {
@@ -312,7 +308,7 @@ input[type="radio"] {
     width: 600px;
     left: 50%;
     top: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%) scale(0.4);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -332,7 +328,7 @@ input[type="radio"] {
   top: 0;
   left: 0;
   transition-duration: 1s;
-  transform: scale(0.4);
+  // transform: scale(0.4);
 
   @media (min-width: 576px) {
     transform: scale(1);
@@ -579,7 +575,7 @@ label:nth-child(1) {
 }
 
 .front-image {
-  background-image: url('./images/placeholder.png');
+  background-image: url('./images/gemeindehaus_front.jpg');
   background-position: center;
   background-size: cover;
   min-height: 400px;

@@ -276,19 +276,32 @@ input[type="radio"] {
 }
 
 .radio-group {
+    // position: fixed;
+    // display: flex;
+    // justify-content: space-between;
+    // align-items: center;
+    // font-size: 14px;
+    // bottom: 0;
+    // right: 0;
+    // width: 100vh;
+    // margin-right: 25px;
+    // transform: rotateZ(90deg);
+    // transform-origin: bottom right;
+    // color: $green;
+    // z-index: 999;
+    // transition-duration: 2s;
     position: fixed;
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: 14px;
-    bottom: 0;
-    right: 0;
+    top: 0;
+    left: 99vw;
     width: 100vh;
-    margin-right: 25px;
     transform: rotateZ(90deg);
-    transform-origin: bottom right;
+    transform-origin: top left;
     color: $green;
-    z-index: 999;
+    z-index: 997;
     transition-duration: 2s;
 
     @media(min-width: 576px) {
@@ -297,12 +310,11 @@ input[type="radio"] {
       justify-content: space-between;
       align-items: center;
       font-size: 20px;
-      bottom: 0;
-      right: 0;
+      top: 0;
+      left: 99vw;
       width: 100vh;
-      margin-right: 40px;
       transform: rotateZ(90deg);
-      transform-origin: bottom right;
+      transform-origin: top left;
       color: $green;
       z-index: 997;
       transition-duration: 2s;
@@ -539,7 +551,7 @@ label {
 }
 
 label:nth-child(1) {
-  margin-left: 25px;
+  margin-left: 15px;
 }
 
 .impressum-button {

@@ -431,34 +431,49 @@ input[type="radio"] {
 
 .cube-container {
     position: fixed;
-    height: 400px;
-    width: 600px;
+    height: 200px;
+    width: 300px;
     left: 50%;
     top: 50%;
-    transform: translate(-50%,-50%) scale(0.4);
+    transform: translate(-50%,-50%);
     display: flex;
     justify-content: center;
     align-items: center;
     transition-duration: 1s;
 
     @media (min-width: 576px) {
+      position: fixed;
+      height: 400px;
+      width: 600px;
+      left: 50%;
+      top: 50%;
       transform: translate(-50%,-50%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition-duration: 1s;
     }
 }
 
 .scene {
   // position: absolute;
-  width: 600px;
-  height: 400px;
+  width: 300px;
+  height: 200px;
   margin: 0;
   perspective: 400px;
   top: 0;
   left: 0;
   transition-duration: 1s;
-  // transform: scale(0.4);
 
   @media (min-width: 576px) {
-    transform: scale(1);
+    // position: absolute;
+    width: 600px;
+    height: 400px;
+    margin: 0;
+    perspective: 400px;
+    top: 0;
+    left: 0;
+    transition-duration: 1s;
   }
 }
 
@@ -493,6 +508,42 @@ input[type="radio"] {
 
 .box__face--front,
 .box__face--back {
+  width: 300px;
+  height: 200px;
+  line-height: 200px;
+  transition-duration: 1s;
+}
+
+.box__face--right,
+.box__face--left {
+  width: 100px;
+  height: 200px;
+  left: 100px;
+  line-height: 200px;
+  transition-duration: 1s;
+}
+
+.box__face--top,
+.box__face--bottom {
+  width: 300px;
+  height: 100px;
+  top: 50px;
+  line-height: 100px;
+  transition-duration: 1s;
+}
+
+.box__face--front  { transform: rotateY(  0deg) translateZ( 50px); }
+.box__face--back   { transform: rotateY(180deg) translateZ( 50px); }
+
+.box__face--right  { transform: rotateY( 90deg) translateZ(150px); }
+.box__face--left   { transform: rotateY(-90deg) translateZ(150px); }
+
+.box__face--top    { transform: rotateX( 90deg) translateZ(100px); }
+.box__face--bottom { transform: rotateX(-90deg) translateZ(100px); }
+
+@media (min-width: 576px) {
+  .box__face--front,
+.box__face--back {
   width: 600px;
   height: 400px;
   line-height: 200px;
@@ -525,6 +576,7 @@ input[type="radio"] {
 
 .box__face--top    { transform: rotateX( 90deg) translateZ(150px); }
 .box__face--bottom { transform: rotateX(-90deg) translateZ(250px); }
+}
 
 .box__face--front .close-button {
 }

@@ -439,7 +439,7 @@ function handleOrientation(event) {
   var alpha    = event.alpha;
   var beta     = event.beta;
   var gamma    = event.gamma;
-
+  document.getElementsByClassName('test-orientation').innerHTML = `${beta} & ${gamma}`;
   var rotX;
   var rotY;
   

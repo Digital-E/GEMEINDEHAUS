@@ -163,7 +163,7 @@ input[type=radio] {
   transform: rotateZ(90deg);
   transform-origin: bottom right;
   color: #0F5440;
-  z-index: 997;
+  z-index: 999;
   transition-duration: 2s;
 }
 @media (min-width: 576px) {
@@ -198,7 +198,12 @@ input[type=radio] {
 }
 
 .cube-container {
-  z-index: 999 !important;
+  z-index: 998;
+}
+@media (min-width: 576px) {
+  .cube-container {
+    z-index: 999 !important;
+  }
 }
 
 .header {
@@ -302,7 +307,7 @@ input[type=radio] {
   width: 600px;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%) scale(0.4);
+  transform: translate(-50%, -50%);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -322,6 +327,12 @@ input[type=radio] {
   top: 0;
   left: 0;
   transition-duration: 1s;
+  transform: scale(0.4);
+}
+@media (min-width: 576px) {
+  .scene {
+    transform: scale(1);
+  }
 }
 
 .box {

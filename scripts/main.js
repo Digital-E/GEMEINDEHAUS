@@ -438,6 +438,8 @@ function handleOrientation(event) {
   var beta     = event.beta;
   var gamma    = event.gamma;
 
+  alert("moved");
+
   var rotX;
   var rotY;
   

@@ -442,9 +442,9 @@ function handleOrientation(event) {
   document.getElementsByClassName('test-orientation').innerHTML = `${beta} & ${gamma}`;
   var rotX;
   var rotY;
-  
-      // rotX = (centerY - e.clientY) * (100 / windowHeight) * 0.8;
-      // rotY = (centerX - e.clientX) * (100 / windowWidth) * 0.8;
+
+        rotX =  beta * 2;
+        rotY = gamma * 2;
       
-        box.style.transform = `translateZ(-200px) rotateX(${-beta}deg) rotateY(${gamma}deg)`;
+        box.style.transform = `translateZ(-200px) rotateX(${-rotX}deg) rotateY(${rotY}deg)`;
 }

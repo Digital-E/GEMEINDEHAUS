@@ -435,16 +435,16 @@ if (window.DeviceOrientationEvent) {
 }
 
 function handleOrientation(event) {
-  var absolute = event.absolute;
-  var alpha    = event.alpha;
-  var beta     = event.beta;
-  var gamma    = event.gamma;
-  document.getElementsByClassName('test-orientation').innerHTML = `${beta} & ${gamma}`;
+  // var absolute = event.absolute;
+  // var alpha    = Math.round(event.alpha);
+  var beta     = Math.round(event.beta);
+  var gamma    = Math.round(event.gamma);
+
   var rotX;
   var rotY;
 
-        rotX =  beta * 2;
-        rotY = gamma * 2;
+        rotX =  beta * 1;
+        rotY = gamma * 1;
       
         box.style.transform = `translateZ(-200px) rotateX(${-rotX}deg) rotateY(${rotY}deg)`;
 }

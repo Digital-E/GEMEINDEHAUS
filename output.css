@@ -1014,9 +1014,14 @@ label:nth-child(1) {
 .news-loaded-content-top-container-background {
   position: absolute;
   width: 100%;
-  height: 150px;
+  height: 110px;
   background-color: #0F5440;
   z-index: 999;
+}
+@media (min-width: 576px) {
+  .news-loaded-content-top-container-background {
+    height: 150px;
+  }
 }
 
 .news-loaded-content-container {
@@ -1041,7 +1046,12 @@ label:nth-child(1) {
 }
 
 .news-loaded-content {
-  margin-top: 180px;
+  margin-top: 120px;
+}
+@media (min-width: 576px) {
+  .news-loaded-content {
+    margin-top: 160px;
+  }
 }
 
 .news-loaded-content-top-container-content {

@@ -525,7 +525,7 @@ label:nth-child(1) {
   position: relative;
   transform-style: preserve-3d;
   transform: translateZ(-200px);
-  transition: transform 1s;
+  // transition: transform 1s;
 }
 
 .box.show-front  { transform: translateZ( -200px) rotateY(   0deg) }

@@ -148,7 +148,7 @@ function addToCalendar(response) {
   span4.innerHTML = `${response.rawJSON.tag[0].text}`;
   var span5 = document.createElement('span');
   var link = document.createElement('a');
-  link.innerHTML = '<img src="../link.svg" alt="">';
+  link.innerHTML = '<img src="../GEMEINDEHAUS/link.svg" alt="">';
   link.setAttribute('href', `${response.rawJSON.link.url}` );
   span5.appendChild(link);
   var hr = document.createElement('hr');

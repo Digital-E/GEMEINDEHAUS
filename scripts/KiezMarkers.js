@@ -203,7 +203,7 @@ function initMap() {
       icon: {
         anchor: new google.maps.Point(30, 30.26),
         size: new google.maps.Size(30,30.26),
-        url: '../images/favicon.png'
+        url: '../GEMEINDEHAUS/images/favicon.png'
       }
     });
 
@@ -246,7 +246,7 @@ function initMap() {
             icon: {
               anchor: new google.maps.Point(30, 30.26),
               size: new google.maps.Size(60,30.26),
-              url: '../pin.svg'
+              url: '../GEMEINDEHAUS/pin.svg'
             }
           });
       })

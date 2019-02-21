@@ -295,7 +295,7 @@ input[type=radio] {
   font-size: 10px;
   top: 0;
   left: 99vw;
-  width: calc(100vh - 30px);
+  width: calc(100vh - 60px);
   transform: rotateZ(90deg);
   transform-origin: top left;
   color: #0F5440;

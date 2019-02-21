@@ -148,7 +148,7 @@ function addToCalendar(response) {
   span4.innerHTML = `${response.rawJSON.tag[0].text}`;
   var span5 = document.createElement('span');
   var link = document.createElement('a');
-  link.innerHTML = '<img src="./link.svg" alt="">';
+  link.innerHTML = '<img src="../link.svg" alt="">';
   link.setAttribute('href', `${response.rawJSON.link.url}` );
   span5.appendChild(link);
   var hr = document.createElement('hr');
@@ -427,8 +427,8 @@ function moveFunction(e) {
     var rotX;
     var rotY;
     
-        rotX = (centerY - e.clientY) * (100 / windowHeight) * 0.8;
-        rotY = (centerX - e.clientX) * (100 / windowWidth) * 0.8;
+        rotX = (centerY - e.clientY) * (100 / windowHeight) * 1.2;
+        rotY = (centerX - e.clientX) * (100 / windowWidth) * 1.2;
         
         box.style.transform = `translateZ(-200px) rotateX(${rotX}deg) rotateY(${-rotY}deg)`;
 };
@@ -443,8 +443,8 @@ if (window.DeviceOrientationEvent) {
 function handleOrientation(event) {
   // var absolute = event.absolute;
   // var alpha    = Math.round(event.alpha);
-  var beta     = Math.round(event.beta);
-  var gamma    = Math.round(event.gamma);
+  var beta  = event.beta;
+  var gamma = event.gamma;
 
   var rotX;
   var rotY;

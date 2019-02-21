@@ -920,7 +920,7 @@ label:nth-child(1) {
 }
 
 .map-list-grid-3 .map-list-grid-item:nth-child(1) .map-list-grid-image {
-  background-image: url('./images/kiez/Gemüseladen.jpg');
+  background-image: url('./images/kiez/Gemuuseladen.jpg');
 }
 
 .map-list-grid-3 .map-list-grid-item:nth-child(2) .map-list-grid-image {
@@ -928,7 +928,7 @@ label:nth-child(1) {
 }
 
 .map-list-grid-3 .map-list-grid-item:nth-child(3) .map-list-grid-image {
-  background-image: url('./images/kiez/Tabakbörse.jpg');
+  background-image: url('./images/kiez/Tabakborse.jpg');
 }
 
 .map-list-grid-3 .map-list-grid-item:nth-child(4) .map-list-grid-image {
@@ -989,12 +989,22 @@ label:nth-child(1) {
   position: relative;
   display: flex;
   justify-content: space-between;
-  font-size: 48px;
+  font-size: 18px;
   align-items: center;
+
+  @media(min-width: 576px) {
+    font-size: 48px;
+  }
 }
 
 .news-loaded-content-top-container-content span:nth-child(n+2) {
-  margin-top: 15px;
+  margin-top: 5px;
+  font-size: 12px;
+
+  @media(min-width: 576px) {
+    margin-top: 15px;
+    font-size: 24px;
+  }
 }
 
 .news-loaded-content-top-container-date {
@@ -1014,8 +1024,13 @@ label:nth-child(1) {
 }
 
 .news-loaded-content-top-container-share img{
-  height: 20px;
-  width: 20px
+  height: 10px;
+  width: 10px;
+
+  @media(min-width: 576px) {
+    height: 20px;
+    width: 20px
+  }
 }
 
 .news-loaded-content-images {
@@ -1042,6 +1057,7 @@ label:nth-child(1) {
   margin: 0;
   width: 100%;
   border-style: solid;
+  border-width: 0.5px;
 }
 
 #map {

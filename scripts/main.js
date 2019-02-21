@@ -61,12 +61,42 @@ Prismic.api("https://gemeindehaus.cdn.prismic.io/api/v2").then(function(api) {
 
 }, function(err) {
     console.log("Something went wrong: ", err);
+}).then(function(){
+
+  //Add Impressum Button To DOM
+
+  setTimeout(function(){
+    
+    var impressumButton = document.createElement('div');
+    impressumButton.className = 'impressum-button';
+    impressumButton.innerHTML = 'Impressum';
+    var newsElementsList = document.querySelector('.news-elements');
+    newsElementsList.appendChild(impressumButton);
+  
+    // Translate Impressum Div Right
+  
+  var impressumButton = document.querySelector('.impressum-button');
+  var impressumContent = document.querySelector('.impressum-content');
+  
+  impressumButton.addEventListener('click', function() {
+  
+    TweenMax.staggerTo(".header-subelement", 2, {y:'20%', ease:Power2.easeInOut}, 0);
+    impressumContent.style.zIndex = "999";
+    TweenMax.to(".impressum-content",2, {y:'25%', ease:Power2.easeInOut});
+  
+    window.addEventListener('scroll', function(){
+      TweenMax.staggerTo(".header-subelement", 0.5, {y:'0%', ease:Power2.easeOut}, 0);
+      impressumContent.style.zIndex = "0";
+      TweenMax.to(".impressum-content",0.2, {y:'-200%', ease:Power2.easeIn});
+    }); 
+  });
+
+  },500);
+
 });
 
 function addToDom(response) {
   // console.log(response);
-
-  //var dateReformat = response.rawJSON.date.split('-').reverse().join('/');
 
   //Get Date and make Array
   var dateReformatPrePre = response.rawJSON.date.split('-').reverse();
@@ -141,14 +171,14 @@ function addToCalendar(response) {
   var newEventNode = document.createElement('div');
   var span = document.createElement('span');
   span.innerHTML = `${response.rawJSON.title[0].text}`;
- 
+  var span2 = document.createElement('div');
   var span3 = document.createElement('span');
   span3.innerHTML = dateReformat;
   var span4 = document.createElement('span');
   span4.innerHTML = `${response.rawJSON.tag[0].text}`;
   var span5 = document.createElement('span');
   var link = document.createElement('a');
-  link.innerHTML = '<img src="../GEMEINDEHAUS/link.svg" alt="">';
+  link.innerHTML = '<img src="./link.svg" alt="">';
   link.setAttribute('href', `${response.rawJSON.link.url}` );
   span5.appendChild(link);
   var hr = document.createElement('hr');
@@ -157,13 +187,15 @@ function addToCalendar(response) {
   newEventNode.id = `${response.id}`;
 
   span.className = 'news-loaded-content-top-container-title';
+  span2.appendChild(span3);
+  span2.appendChild(span4);
+  span2.className = "news-loaded-content-top-container-flex";
   span3.className = 'news-loaded-content-top-container-date';
   span4.className = 'news-loaded-content-top-container-tag';
   span5.className = 'news-loaded-content-top-container-share';
 
   newEventNode.appendChild(span);
-  newEventNode.appendChild(span3);
-  newEventNode.appendChild(span4);
+  newEventNode.appendChild(span2);
   newEventNode.appendChild(span5);
 
 
@@ -387,25 +419,6 @@ backButton.addEventListener('click', function(){
         
 });
 
-// Translate Impressum Div Right
-
-var impressumButton = document.querySelector('.impressum-button');
-var impressumContent = document.querySelector('.impressum-content');
-
-impressumButton.addEventListener('click', function() {
-
-  TweenMax.staggerTo(".header-subelement", 2, {y:'20%', ease:Power2.easeInOut}, 0);
-  impressumContent.style.zIndex = "999";
-  TweenMax.to(".impressum-content",2, {y:'25%', ease:Power2.easeInOut});
-
-  window.addEventListener('scroll', function(){
-    TweenMax.staggerTo(".header-subelement", 0.5, {y:'0%', ease:Power2.easeOut}, 0);
-    impressumContent.style.zIndex = "0";
-    TweenMax.to(".impressum-content",0.2, {y:'-200%', ease:Power2.easeIn});
-  });
-
-});
-
 
 //Mouse Move Cube
 
@@ -442,7 +455,7 @@ if (window.DeviceOrientationEvent) {
 
 function handleOrientation(event) {
   // var absolute = event.absolute;
-  // var alpha    = Math.round(event.alpha);
+  // var alpha    = event.alpha;
   var beta  = event.beta;
   var gamma = event.gamma;
 

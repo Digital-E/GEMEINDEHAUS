@@ -318,7 +318,9 @@ function closeAll() {
     window.addEventListener("deviceorientation", handleOrientation);
     box.style.transition = 'transform 1s';
     if(window.innerWidth < 576) {
-      box.style.transition = 'transform 0.1s';
+      setTimeout(function(){
+        box.style.transition = 'transform 0.1s';
+      }, 500);
     }
   },1000);
 

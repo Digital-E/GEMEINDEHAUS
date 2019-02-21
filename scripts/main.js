@@ -226,6 +226,8 @@ var index;
 
  function changeSide() {
 
+  box.style.transition = 'transform 1s'; 
+
   var checkedRadio = radioGroup.querySelector(':checked');
   var showClass = 'show-' + checkedRadio.value;
   box.style.transform = '';
@@ -314,6 +316,7 @@ function closeAll() {
   setTimeout(function(){
     document.addEventListener('mousemove', moveFunction);
     window.addEventListener("deviceorientation", handleOrientation);
+    box.style.transition = 'none';
   },1000);
 
 };

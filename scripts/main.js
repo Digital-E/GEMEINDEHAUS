@@ -316,7 +316,7 @@ function closeAll() {
   setTimeout(function(){
     document.addEventListener('mousemove', moveFunction);
     window.addEventListener("deviceorientation", handleOrientation);
-    box.style.transition = 'transform 0.1s';
+    box.style.transition = 'transform 1s';
   },1000);
 
 };

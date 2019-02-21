@@ -304,7 +304,7 @@ input[type="radio"] {
 
 .radio-group {
 
-    position: fixed;
+    position: absolute;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -319,7 +319,7 @@ input[type="radio"] {
     margin-right: 10px;
 
     @media(min-width: 576px) {
-      position: fixed;
+      position: absolute;
       display: flex;
       justify-content: space-between;
       align-items: center;

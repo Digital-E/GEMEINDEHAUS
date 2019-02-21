@@ -361,6 +361,10 @@ input[type="radio"] {
   }
 }
 
+.radio-group label a {
+  text-decoration: none;
+}
+
 label {
   margin-right: 15px;
 }

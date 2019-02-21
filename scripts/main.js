@@ -82,7 +82,7 @@ Prismic.api("https://gemeindehaus.cdn.prismic.io/api/v2").then(function(api) {
   
     TweenMax.staggerTo(".header-subelement", 2, {y:'20%', ease:Power2.easeInOut}, 0);
     impressumContent.style.zIndex = "999";
-    TweenMax.to(".impressum-content",2, {y:'25%', ease:Power2.easeInOut});
+    TweenMax.to(".impressum-content",2, {y:'10%', ease:Power2.easeInOut});
   
     window.addEventListener('scroll', function(){
       TweenMax.staggerTo(".header-subelement", 0.5, {y:'0%', ease:Power2.easeOut}, 0);
@@ -317,6 +317,9 @@ function closeAll() {
     document.addEventListener('mousemove', moveFunction);
     window.addEventListener("deviceorientation", handleOrientation);
     box.style.transition = 'transform 1s';
+    if(window.innerWidth < 576) {
+      box.style.transition = 'transform 0.1s';
+    }
   },1000);
 
 };

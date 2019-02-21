@@ -292,7 +292,7 @@ input[type=radio] {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 14px;
+  font-size: 10px;
   top: 0;
   left: 99vw;
   width: 100vh;
@@ -322,8 +322,8 @@ input[type=radio] {
 }
 
 .radio-group label img {
-  height: 15px;
-  width: 15px;
+  height: 12px;
+  width: 12px;
   transform: rotate(-90deg);
   margin-top: 5px;
 }
@@ -366,10 +366,12 @@ label:nth-child(1) {
   height: 100vh;
   font-size: 70px;
   background-color: #EAAFB9;
+  margin: 0 auto;
+  width: 90%;
 }
 .news-container hr {
   border-color: #0F5440;
-  width: 89%;
+  width: 100%;
   border-width: 0.5px;
 }
 
@@ -379,7 +381,6 @@ label:nth-child(1) {
   height: 100%;
   color: #0F5440;
   transition-duration: 2s;
-  padding-left: 10px;
 }
 
 .news-element {
@@ -387,19 +388,23 @@ label:nth-child(1) {
   font-size: 20px;
   display: grid;
   grid-template-columns: 1fr 0.3fr;
-  max-width: calc(100vw - 60px);
+  max-width: 100%;
   margin-top: 15px;
   padding-left: 2px;
 }
 @media (min-width: 576px) {
   .news-element {
-    position: relative;
+    font-size: 32px;
+  }
+}
+@media (min-width: 768px) {
+  .news-element {
+    font-size: 42px;
+  }
+}
+@media (min-width: 1200px) {
+  .news-element {
     font-size: 72px;
-    display: grid;
-    grid-template-columns: 1fr 0.3fr;
-    max-width: 1200px;
-    margin-top: 15px;
-    padding-left: 2px;
   }
 }
 
@@ -414,8 +419,19 @@ label:nth-child(1) {
   justify-content: center;
   align-items: flex-end;
   font-family: "GT-America";
+  padding-right: 10px;
 }
 @media (min-width: 576px) {
+  .news-element-flex {
+    font-size: 14px;
+  }
+}
+@media (min-width: 768px) {
+  .news-element-flex {
+    font-size: 18px;
+  }
+}
+@media (min-width: 1200px) {
   .news-element-flex {
     font-size: 24px;
   }
@@ -423,10 +439,6 @@ label:nth-child(1) {
 
 .news-element-flex:nth-child(2) span:nth-child(1) {
   font-style: italic;
-}
-
-.news-element-top-div {
-  margin-right: 50px;
 }
 
 .news-loaded-container {

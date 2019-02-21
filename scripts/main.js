@@ -317,7 +317,7 @@ function closeAll() {
     document.addEventListener('mousemove', moveFunction);
     window.addEventListener("deviceorientation", handleOrientation);
     box.style.transition = 'transform 1s';
-    if(window.innerWidth < 576) {
+    if(window.innerWidth < 768) {
       setTimeout(function(){
         box.style.transition = 'transform 0.1s';
       }, 500);
@@ -427,7 +427,7 @@ backButton.addEventListener('click', function(){
 
 //Mouse Move Cube
 
-if (window.innerWidth > 576) {
+if (window.innerWidth > 768) {
   document.addEventListener('mousemove', moveFunction);
 
 function moveFunction(e) {

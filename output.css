@@ -35,7 +35,25 @@
   margin-right: auto;
   margin-bottom: 70px;
   line-height: 24px;
+  transition-duration: 1s;
 }
+.CTA-prices:hover {
+  background-color: #EAAFB9;
+  color: #0F5440;
+  transition-duration: 1s;
+}
+
+.CTA-prices:hover a {
+  color: #0F5440;
+  transition-duration: 1s;
+}
+
+.CTA-prices a {
+  text-decoration: none;
+  color: #EAAFB9;
+  transition-duration: 1s;
+}
+
 ::-webkit-scrollbar {
   display: none;
 }
@@ -215,7 +233,22 @@
   margin-right: auto;
   margin-bottom: 70px;
   line-height: 24px;
+  transition-duration: 1s;
 }
+.contact-button:hover {
+  background-color: #EAAFB9;
+}
+
+.contact-button:hover a {
+  color: #0F5440;
+}
+
+.contact-button a {
+  text-decoration: none;
+  color: #EAAFB9;
+  transition-duration: 1s;
+}
+
 .overlay {
   position: absolute;
   height: 100%;
@@ -295,6 +328,8 @@ input[type=radio] {
   flex-direction: column;
   margin-top: 5px;
   margin-right: 5px;
+  z-index: 997;
+  transition-duration: 2s;
 }
 @media (min-width: 576px) {
   .socials {
@@ -373,6 +408,7 @@ input[type=radio] {
   position: relative;
   height: 100vh;
   width: 100vw;
+  background-color: #EAAFB9;
 }
 
 .news-container {
@@ -1169,7 +1205,6 @@ hr {
   position: relative;
   border-color: #EAAFB9;
   margin: 0;
-  width: 100%;
   border-style: solid;
   border-width: 0.5px;
 }

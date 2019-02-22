@@ -82,7 +82,7 @@ Prismic.api("https://gemeindehaus.cdn.prismic.io/api/v2").then(function(api) {
   
     TweenMax.staggerTo(".header-subelement", 2, {y:'20%', ease:Power2.easeInOut}, 0);
     impressumContent.style.zIndex = "999";
-    TweenMax.to(".impressum-content",2, {y:'10%', ease:Power2.easeInOut});
+    TweenMax.to(".impressum-content",2, {y:'5%', ease:Power2.easeInOut});
   
     window.addEventListener('scroll', function(){
       TweenMax.staggerTo(".header-subelement", 0.5, {y:'0%', ease:Power2.easeOut}, 0);
@@ -319,6 +319,9 @@ function closeAll() {
     box.style.transition = 'transform 1s';
     if(window.innerWidth < 768) {
       setTimeout(function(){
+        box.style.transition = 'transform 0.5s';
+      }, 300);
+      setTimeout(function(){
         box.style.transition = 'transform 0.1s';
       }, 500);
     }
@@ -338,12 +341,14 @@ function expand(currentClass, closed) {
     overlay.style.visibility = "hidden";
     document.querySelector('.news-elements').style.filter = 'blur(0px)';
     document.querySelector('.radio-group').style.filter = 'blur(0px)';
+    document.querySelector('.socials').style.filter = 'blur(0px)';
     document.querySelector('.impressum-button').style.filter = 'blur(0px)';
 
   } else {
     overlay.style.visibility = "visible";
     document.querySelector('.news-elements').style.filter = 'blur(10px)';
     document.querySelector('.radio-group').style.filter = 'blur(10px)';
+    document.querySelector('.socials').style.filter = 'blur(10px)';
     document.querySelector('.impressum-button').style.filter = 'blur(10px)';
   }
 

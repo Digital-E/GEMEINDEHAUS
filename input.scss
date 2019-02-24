@@ -434,7 +434,7 @@ input[type="radio"] {
 
 .news-container {
     position: relative;
-    // height: 100vh;
+    height: 100vh;
     font-size: 70px;
     background-color: $pink;
     margin: 0 auto;
@@ -840,13 +840,13 @@ input[type="radio"] {
     transition-duration: 1s;
     position: fixed;
     left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
+    top: 0;
+    transform: translate(-50%);
     display: flex;
 
     @media(min-width: 576px) {
-      top: 0;
-      transform: translate(-50%);
+      top: 50%;
+      transform: translate(-50%,-50%);
     }
 }
 

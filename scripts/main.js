@@ -318,12 +318,10 @@ function closeAll() {
     window.addEventListener("deviceorientation", handleOrientation);
     box.style.transition = 'transform 1s';
     if(window.innerWidth < 768) {
-      setTimeout(function(){
-        box.style.transition = 'transform 0.5s';
-      }, 0);
+      box.classList.add('show-front');
       setTimeout(function(){
         box.style.transition = 'transform 0.1s';
-      }, 300);
+      }, 200);
     }
   },1000);
 

@@ -319,8 +319,8 @@ function closeAll() {
   },1000);
 
   if(window.innerWidth < 768) {
-    box.style.transform = 'translateZ(-200px) rotateX(0deg) rotateY(0deg)';
     setTimeout(function(){
+      box.style.transform = 'translateZ(-200px) rotateX(0deg) rotateY(0deg)';
       box.style.transition = 'transform 0.1s';
       window.addEventListener("deviceorientation", handleOrientation);
     },1000);

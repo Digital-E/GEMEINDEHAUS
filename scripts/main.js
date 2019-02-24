@@ -320,11 +320,12 @@ function closeAll() {
       box.classList.add('show-front');
       setTimeout(function(){
         box.style.transition = 'transform 0.1s';
-      }, 500);
-      // window.addEventListener("deviceorientation", handleOrientation);
+      }, 1000);
+      setTimeout(function(){
+        window.addEventListener("deviceorientation", handleOrientation);
+      }, 1100);
     }
   },1000);
-  window.addEventListener("deviceorientation", handleOrientation);
 
 };
 

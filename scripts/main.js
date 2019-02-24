@@ -321,9 +321,11 @@ function closeAll() {
   if(window.innerWidth < 768) {
     setTimeout(function(){
       box.style.transform = 'translateZ(-200px) rotateX(0deg) rotateY(0deg)';
+    },1000);
+    setTimeout(function(){
       box.style.transition = 'transform 0.1s';
       window.addEventListener("deviceorientation", handleOrientation);
-    },1000);
+    },1250);
 
   }
 

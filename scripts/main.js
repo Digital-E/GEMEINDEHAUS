@@ -313,11 +313,18 @@ function closeAll() {
 
   expand("", "closed");
 
-  setTimeout(function(){
-    document.addEventListener('mousemove', moveFunction);
-    window.addEventListener("deviceorientation", handleOrientation);
-    box.style.transition = 'transform 1s';
-  },0);
+  document.addEventListener('mousemove', moveFunction);
+  box.style.transition = 'transform 1s';
+
+  if(window.innerWidth < 768) {
+    
+    setTimeout(function(){
+      box.style.transition = 'transform 0.1s';
+    }, 500);
+    setTimeout(function(){
+      window.addEventListener("deviceorientation", handleOrientation);
+    },750);
+  }
 
 };
 

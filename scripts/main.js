@@ -315,8 +315,9 @@ function closeAll() {
 
   setTimeout(function(){
     document.addEventListener('mousemove', moveFunction);
+    window.addEventListener("deviceorientation", handleOrientation);
     box.style.transition = 'transform 1s';
-  },500);
+  },0);
 
 };
 

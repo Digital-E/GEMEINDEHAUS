@@ -873,7 +873,8 @@ input[type=radio] {
 }
 @media (min-width: 576px) {
   .expand--cube {
-    height: calc(100vh - 50px);
+    top: 0;
+    transform: translate(-50%);
   }
 }
 

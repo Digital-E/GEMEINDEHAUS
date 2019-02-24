@@ -313,7 +313,7 @@ function closeAll() {
 
   expand("", "closed");
 
-  document.addEventListener('mousemove', moveFunction);
+  // document.addEventListener('mousemove', moveFunction);
   box.style.transition = 'transform 1s';
 
   if(window.innerWidth < 768) {

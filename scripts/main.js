@@ -316,12 +316,7 @@ function closeAll() {
   setTimeout(function(){
     document.addEventListener('mousemove', moveFunction);
     box.style.transition = 'transform 1s';
-    if(window.innerWidth < 768) {
-      setTimeout(function(){
-        box.style.transition = 'transform 0.1s';
-      }, 500);
-    }
-  },1000);
+  },500);
 
 };
 

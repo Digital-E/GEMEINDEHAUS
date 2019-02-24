@@ -833,7 +833,7 @@ input[type="radio"] {
 }
 
 .expand--cube {
-    height: calc(100vh - 50px);
+    height: calc(100vh - 150px);
     width: calc(100vw - 50px);
     max-height: 700px;
     max-width: 1000px;
@@ -843,6 +843,10 @@ input[type="radio"] {
     top: 50%;
     transform: translate(-50%,-50%);
     display: flex;
+
+    @media(min-width: 576px) {
+      height: calc(100vh - 50px);
+    }
 }
 
 .inner__box__face {

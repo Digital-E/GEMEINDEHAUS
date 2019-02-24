@@ -325,7 +325,7 @@ function closeAll() {
     setTimeout(function(){
       box.style.transition = 'transform 0.1s';
       window.addEventListener("deviceorientation", handleOrientation);
-    },1250);
+    },1500);
 
   }
 

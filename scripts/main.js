@@ -316,11 +316,10 @@ function closeAll() {
   setTimeout(function(){
     document.addEventListener('mousemove', moveFunction);
     box.style.transition = 'transform 1s';
-    box.classList.add('show-front');
     if(window.innerWidth < 768) {
       setTimeout(function(){
         box.style.transition = 'transform 0.1s';
-      }, 1000);
+      }, 500);
       setTimeout(function(){
         window.addEventListener("deviceorientation", handleOrientation);
       }, 1100);

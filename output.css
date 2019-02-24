@@ -270,6 +270,10 @@
   z-index: 999;
 }
 
+.close-button:hover {
+  cursor: pointer;
+}
+
 .close-button img {
   position: relative;
   z-index: 999;
@@ -394,6 +398,10 @@ input[type=radio] {
     transition-duration: 2s;
     margin-right: 30px;
   }
+}
+
+.radio-group label:hover {
+  cursor: pointer;
 }
 
 .radio-group label {
@@ -915,19 +923,55 @@ input[type=radio] {
   align-items: center;
 }
 
+.map-button-mobile {
+  position: fixed;
+  display: inline-block;
+  bottom: 0;
+  right: 0;
+  margin: 0px 15px 15px 0px;
+  height: 45px;
+  width: 45px;
+  background-color: #0F5440;
+  border-radius: 50px;
+  border: 3px solid #EAAFB9;
+  z-index: 999;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+}
+@media (min-width: 576px) {
+  .map-button-mobile {
+    display: none;
+  }
+}
+
+.map-button-mobile img {
+  position: absolute;
+  z-index: 999;
+  height: 25px;
+  width: 25px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .map-container {
   height: 100%;
   width: 100%;
   position: absolute;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 0fr 1fr;
+  transition-duration: 1s;
 }
 @media (min-width: 576px) {
   .map-container {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 1fr;
   }
+}
+
+.map-container-expand {
+  grid-template-rows: 0.4fr 0.6fr;
+  transition-duration: 1s;
 }
 
 .map-container hr {

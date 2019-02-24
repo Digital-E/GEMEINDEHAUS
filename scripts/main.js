@@ -479,3 +479,12 @@ function handleOrientation(event) {
       
         box.style.transform = `translateZ(-200px) rotateX(${-rotX}deg) rotateY(${rotY}deg)`;
 }
+
+//Map Mobile Expand
+
+var mapToExpand = document.querySelector('.map-container');
+var mapExpandButton = document.querySelector('.map-button-mobile');
+
+mapExpandButton.addEventListener('click', function(){
+  mapToExpand.classList.toggle('map-container-expand');
+})

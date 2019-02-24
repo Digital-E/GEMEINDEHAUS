@@ -320,10 +320,10 @@ function closeAll() {
     if(window.innerWidth < 768) {
       setTimeout(function(){
         box.style.transition = 'transform 0.5s';
-      }, 300);
+      }, 0);
       setTimeout(function(){
         box.style.transition = 'transform 0.1s';
-      }, 500);
+      }, 300);
     }
   },1000);
 

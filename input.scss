@@ -833,20 +833,19 @@ input[type="radio"] {
 }
 
 .expand--cube {
-    height: calc(100vh - 50px);
+    height: calc(100vh - 200px);
     width: calc(100vw - 50px);
     max-height: 700px;
     max-width: 1000px;
     transition-duration: 1s;
     position: fixed;
     left: 50%;
-    top: 0;
-    transform: translate(-50%);
+    top: 50%;
+    transform: translate(-50%,-50%);
     display: flex;
 
     @media(min-width: 576px) {
-      top: 50%;
-      transform: translate(-50%,-50%);
+      height: calc(100vh - 50px);
     }
 }
 

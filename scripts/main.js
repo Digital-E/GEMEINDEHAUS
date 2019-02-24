@@ -315,13 +315,13 @@ function closeAll() {
 
   setTimeout(function(){
     document.addEventListener('mousemove', moveFunction);
-    window.addEventListener("deviceorientation", handleOrientation);
     box.style.transition = 'transform 1s';
     if(window.innerWidth < 768) {
       box.classList.add('show-front');
       setTimeout(function(){
         box.style.transition = 'transform 0.1s';
       }, 200);
+      window.addEventListener("deviceorientation", handleOrientation);
     }
   },1000);
 

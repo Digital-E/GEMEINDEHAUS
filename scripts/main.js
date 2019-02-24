@@ -317,13 +317,13 @@ function closeAll() {
   box.style.transition = 'transform 1s';
 
   if(window.innerWidth < 768) {
-    
+
     setTimeout(function(){
       box.style.transition = 'transform 0.1s';
     }, 500);
     setTimeout(function(){
       window.addEventListener("deviceorientation", handleOrientation);
-    },750);
+    },1500);
   }
 
 };

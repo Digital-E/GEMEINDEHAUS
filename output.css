@@ -415,7 +415,7 @@ input[type=radio] {
 
 .header {
   position: relative;
-  height: 100vh;
+  height: calc(100% - 40px);
   width: 100vw;
   background-color: #EAAFB9;
 }

@@ -25,7 +25,13 @@ route(function(event, id) {
 
   }
 
-})
+});
+
+//NiceScroll.js
+
+$(function() {  
+  $(".map-container-left").niceScroll({autohidemode: "hidden"});
+});
 
 
 //Back-end Code

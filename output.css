@@ -10,8 +10,8 @@
   src: url("./fonts/GT-America.otf");
   font-family: "GT-America";
 }
-html, body {
-  height: 500px;
+.nicescroll-rails {
+  display: none !important;
 }
 
 .big-money {

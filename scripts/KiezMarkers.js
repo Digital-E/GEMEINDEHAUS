@@ -260,6 +260,7 @@ function initMap() {
 
     places.forEach(function(place){
         place.addEventListener('click', zoomTo);
+        place.addEventListener('mouseover', zoomTo);
     });
 
     function zoomTo() {

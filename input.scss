@@ -389,12 +389,12 @@ input[type="radio"] {
 
 .radio-group {
 
-    position: absolute;
+    position: fixed;
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: 10px;
-    bottom: 0;
+    top: 700px;
     right: 0;
     transform: rotateZ(90deg);
     transform-origin: bottom right;
@@ -404,7 +404,7 @@ input[type="radio"] {
     margin-right: 13px;
 
     @media(min-width: 576px) {
-      position: absolute;
+      position: fixed;
       display: flex;
       justify-content: space-between;
       align-items: center;

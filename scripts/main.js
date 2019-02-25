@@ -235,7 +235,6 @@ var index;
 
  function changeSide() {
   
-  document.querySelector("body").classList.add("stop-scrolling");
   box.style.transition = 'transform 1s'; 
 
   var checkedRadio = radioGroup.querySelector(':checked');

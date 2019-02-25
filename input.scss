@@ -538,7 +538,7 @@ input[type="radio"] {
 }
 
 .cube-container {
-    position: absolute;
+    position: fixed;
     height: 200px;
     width: 300px;
     left: 50%;
@@ -551,7 +551,7 @@ input[type="radio"] {
     z-index: 998;
 
     @media (min-width: 576px) {
-      position: absolute;
+      position: fixed;
       height: 400px;
       width: 600px;
       left: 50%;

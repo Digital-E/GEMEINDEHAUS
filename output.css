@@ -329,7 +329,6 @@ input[type=radio] {
   top: 0;
   right: 0;
   display: flex;
-  display: none;
   flex-direction: column;
   margin-top: 5px;
   margin-right: 5px;
@@ -371,7 +370,6 @@ input[type=radio] {
 .radio-group {
   position: fixed;
   display: flex;
-  display: none;
   justify-content: space-between;
   align-items: center;
   font-size: 10px;
@@ -503,6 +501,7 @@ input[type=radio] {
 
 .news-loaded-container {
   position: fixed;
+  display: none;
   background-color: #0F5440;
   color: #EAAFB9;
   height: 100vh;

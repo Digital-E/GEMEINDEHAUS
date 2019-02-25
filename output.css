@@ -439,8 +439,6 @@ input[type=radio] {
 
 .news-elements {
   position: relative;
-  overflow: auto;
-  height: 100%;
   color: #0F5440;
   transition-duration: 2s;
 }

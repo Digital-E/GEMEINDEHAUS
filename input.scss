@@ -514,7 +514,6 @@ input[type="radio"] {
 
 .news-loaded-container {
     position: fixed;
-    display: none;
     background-color: $green;
     color: $pink;
     height: 100vh;
@@ -531,6 +530,7 @@ input[type="radio"] {
 
 .cube-container {
     position: fixed;
+    display: none !important;
     height: 200px;
     width: 300px;
     left: 50%;

@@ -27,11 +27,12 @@ $pink: #EAAFB9;
 
 .big-money {
   font-size: 70px;
-  text-align: left;
-  margin: 25px;
+  text-align: center;
+  margin: 0px;
 
   @media (min-width: 576px) {
     font-size: 100px;
+    margin: 25px;
   }
 }
 
@@ -457,8 +458,8 @@ input[type="radio"] {
 
 .news-elements {
     position: relative;
-    // overflow: auto;
-    // height: 100%;
+    overflow: auto;
+    height: 100%;
     color: $green;
     transition-duration: 2s;
 }

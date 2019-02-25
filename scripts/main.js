@@ -275,7 +275,9 @@ var index;
 
     for(i = 0; i < box.children.length; i++) {
         box.children[i].style.visibility = 'hidden';
+        // box.children[i].style.opacity = 0;
         box.children[index].style.visibility = 'visible';
+        // box.children[index].style.opacity = 1;
       }
 
   if(isExpanded) {
@@ -390,6 +392,7 @@ function expand(currentClass, closed) {
       setTimeout(function(){
           for(i = 0; i < box.children.length; i++) {
             box.children[i].style.visibility = "visible";
+            box.children[i].style.opacity = 1;
               }  
             },1000);
 

@@ -21,12 +21,13 @@
 
 .big-money {
   font-size: 70px;
-  text-align: left;
-  margin: 25px;
+  text-align: center;
+  margin: 0px;
 }
 @media (min-width: 576px) {
   .big-money {
     font-size: 100px;
+    margin: 25px;
   }
 }
 
@@ -439,6 +440,8 @@ input[type=radio] {
 
 .news-elements {
   position: relative;
+  overflow: auto;
+  height: 100%;
   color: #0F5440;
   transition-duration: 2s;
 }

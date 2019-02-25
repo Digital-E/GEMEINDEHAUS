@@ -235,6 +235,9 @@ var index;
 
  function changeSide() {
   
+  $('body').addClass('stop-scrolling');
+  $('body').bind('touchmove', function(e){e.preventDefault()});
+
   box.style.transition = 'transform 1s'; 
 
   var checkedRadio = radioGroup.querySelector(':checked');

@@ -29,10 +29,12 @@ route(function(event, id) {
 
 //NiceScroll.js
 
-$(function() {  
-  $(".map-container-left").niceScroll({autohidemode: "hidden"});
-  $(".inner-scroll-div").niceScroll({autohidemode: "hidden"});
-});
+if(window.innerWidth < 768) {
+  $(function() {  
+    $(".map-container-left").niceScroll({autohidemode: "hidden"});
+    $(".inner-scroll-div").niceScroll({autohidemode: "hidden"});
+  });
+}
 
 
 //Back-end Code
@@ -232,7 +234,8 @@ var closed;
 var index;
 
  function changeSide() {
-
+  
+  document.querySelector("body").classList.add("stop-scrolling");
   box.style.transition = 'transform 1s'; 
 
   var checkedRadio = radioGroup.querySelector(':checked');

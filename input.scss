@@ -17,6 +17,11 @@
   display: none !important;
 }
 
+.stop-scrolling {
+  height: 100%;
+  overflow: hidden;
+}
+
 $green: #0F5440;
 $pink: #EAAFB9;
 

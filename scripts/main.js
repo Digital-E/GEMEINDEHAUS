@@ -31,6 +31,7 @@ route(function(event, id) {
 
 $(function() {  
   $(".map-container-left").niceScroll({autohidemode: "hidden"});
+  $(".inner-scroll-div").niceScroll({autohidemode: "hidden"});
 });
 
 

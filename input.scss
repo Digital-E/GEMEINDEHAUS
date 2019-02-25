@@ -331,6 +331,7 @@ body {
   top: 0;
   left: 0;
   background-color: $pink;
+  height: calc(100% + 72px);
 }
 
 input[type="radio"] {

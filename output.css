@@ -447,10 +447,6 @@ input[type=radio] {
   border-width: 0.5px;
 }
 
-.news-element-top-div {
-  padding: 0px 4px 0px 4px;
-}
-
 .news-elements {
   position: relative;
   overflow: auto;
@@ -466,7 +462,6 @@ input[type=radio] {
   grid-template-columns: 1fr 0.3fr;
   max-width: 100%;
   margin-top: 15px;
-  padding: 0px 4px 0px 4px;
 }
 @media (min-width: 576px) {
   .news-element {

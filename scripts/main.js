@@ -364,10 +364,10 @@ function expand(currentClass, closed) {
 
   } else {
     overlay.style.visibility = "visible";
-    document.querySelector('.news-elements').style.filter = 'blur(10px)';
-    document.querySelector('.radio-group').style.filter = 'blur(10px)';
-    document.querySelector('.socials').style.filter = 'blur(10px)';
-    document.querySelector('.impressum-button').style.filter = 'blur(10px)';
+    document.querySelector('.news-elements').style.filter = 'blur(20px)';
+    document.querySelector('.radio-group').style.filter = 'blur(20px)';
+    document.querySelector('.socials').style.filter = 'blur(20px)';
+    document.querySelector('.impressum-button').style.filter = 'blur(20px)';
   }
 
     isExpanded = box.children[index].classList[2];

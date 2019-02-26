@@ -341,14 +341,12 @@ input[type=radio] {
   right: 0;
   display: flex;
   flex-direction: column;
-  margin-top: 5px;
   margin-right: 5px;
   z-index: 996;
   transition-duration: 2s;
 }
 @media (min-width: 576px) {
   .socials {
-    margin-top: 15px;
     margin-right: 10px;
   }
 }
@@ -368,8 +366,8 @@ input[type=radio] {
 }
 
 .socials img {
-  height: 12px;
-  width: 12px;
+  height: 15px;
+  width: 15px;
 }
 @media (min-width: 576px) {
   .socials img {
@@ -380,10 +378,10 @@ input[type=radio] {
 
 .radio-group {
   position: fixed;
-  display: none;
+  display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 10px;
+  font-size: 14px;
   bottom: 0;
   right: 0;
   transform: rotateZ(90deg);
@@ -391,7 +389,8 @@ input[type=radio] {
   color: #0F5440;
   z-index: 996;
   transition-duration: 2s;
-  margin-right: 13px;
+  margin-right: 18px;
+  white-space: nowrap;
 }
 @media (min-width: 576px) {
   .radio-group {
@@ -407,6 +406,7 @@ input[type=radio] {
     color: #0F5440;
     transition-duration: 2s;
     margin-right: 30px;
+    margin-bottom: 0;
   }
 }
 

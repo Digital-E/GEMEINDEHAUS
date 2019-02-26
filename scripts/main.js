@@ -361,6 +361,11 @@ function expand(currentClass, closed) {
     document.querySelector('.radio-group').style.filter = 'blur(0px)';
     document.querySelector('.socials').style.filter = 'blur(0px)';
     document.querySelector('.impressum-button').style.filter = 'blur(0px)';
+    document.querySelector('.news-container').classList.toggle('news-container-expanded');
+    
+    setTimeout(function(){
+      document.querySelector('.news-container').style.transitionDuration = "0s";
+    },500);
 
   } else {
     overlay.style.visibility = "visible";
@@ -368,6 +373,8 @@ function expand(currentClass, closed) {
     document.querySelector('.radio-group').style.filter = 'blur(20px)';
     document.querySelector('.socials').style.filter = 'blur(20px)';
     document.querySelector('.impressum-button').style.filter = 'blur(20px)';
+    document.querySelector('.news-container').style.transitionDuration = "1s";
+    document.querySelector('.news-container').classList.toggle('news-container-expanded');
   }
 
     isExpanded = box.children[index].classList[2];

@@ -442,6 +442,11 @@ input[type=radio] {
   }
 }
 
+.news-container-expanded {
+  padding: 0px 0px 0px 0px;
+  transition-duration: 1s;
+}
+
 .news-container hr {
   border-color: #0F5440;
   border-width: 0.5px;

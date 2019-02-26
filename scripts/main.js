@@ -339,7 +339,7 @@ function closeAll() {
     },1000);
     setTimeout(function(){
       box.style.transition = 'transform 0.1s';
-      $('.header').bind('touchmove');
+      $('.header').unbind('touchmove');
       window.addEventListener("deviceorientation", handleOrientation);
     },1500);
 

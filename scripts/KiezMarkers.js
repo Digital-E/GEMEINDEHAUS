@@ -199,7 +199,7 @@ function initMap() {
 
     var markerHome = new SVGMarker({
       map: map,
-      position: new google.maps.LatLng(53.5564284,9.958706),
+      position: new google.maps.LatLng(53.555651,9.960053),
       icon: {
         anchor: new google.maps.Point(30, 30.26),
         size: new google.maps.Size(30,30.26),
@@ -223,20 +223,20 @@ function initMap() {
 
 
     var markersArray = [
-        {lat: '53.556367', long: '9.9593499'},
-        {lat: '53.5548417',long: '9.9601458'},
-        {lat: '53.5528256',long: '9.9564484'},
+        {lat: '53.556443', long: '9.961525'},
+        {lat: '53.554852',long: '9.962345'},
+        {lat: '53.552840',long: '9.956451'},
         {lat: '53.5528226',long: '9.9609056'},
-        {lat: '53.5582106',long: '9.9606395'},
-        {lat: '53.5564459',long: '9.9601125'},
-        {lat: '53.5528868',long: '9.9579203'},
-        {lat: '53.5532455',long: '9.9593401'},
-        {lat: '53.5592952',long: '9.9622974'},
-        {lat: '53.5556516',long: '9.9602833'},
-        {lat: '53.5528628',long: '9.9589315'},
+        {lat: '53.552831',long: '9.963118'},
+        {lat: '53.558223',long: '9.962832'},
+        {lat: '53.556459',long: '9.962343'},
+        {lat: '53.552907',long: '9.960115'},
+        {lat: '53.553241',long: '9.961525'},
+        {lat: '53.559312',long: '9.964531'},
+        {lat: '53.555671',long: '9.962547'},
         {lat: '53.5530997',long: '9.9592442'},
-        {lat: '53.5565742',long: '9.9617158'},
-        {lat: '53.5581411',long: '9.9609226'}
+        {lat: '53.556565',long: '9.962767'},
+        {lat: '53.558140',long: '9.963108'}
       ];
 
       markers.forEach(function(object, index, markers) {
@@ -291,7 +291,7 @@ function initMap() {
                     position: new google.maps.LatLng(markersArray[match].lat, markersArray[match].long),
                     map: map,
                     icon: {
-                        url: '../GEMEINDEHAUS/pin2.svg',
+                        url: './pin2.svg',
                         anchor: new google.maps.Point(30, 30.26),
                         scaledSize: new google.maps.Size(30, 30),
                     }

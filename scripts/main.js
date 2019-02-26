@@ -332,6 +332,7 @@ function closeAll() {
 
   setTimeout(function(){
     document.addEventListener('mousemove', moveFunction);
+    $('body').removeClass('stop-scrolling');
     box.style.transition = 'transform 1s';
   },1000);
 

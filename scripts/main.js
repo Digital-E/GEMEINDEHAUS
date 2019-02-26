@@ -237,6 +237,7 @@ var index;
   
   $('body').addClass('stop-scrolling');
   $('body').bind('touchmove', function(e){e.preventDefault()});
+  $('.header').bind('touchmove', function(e){e.preventDefault()});
 
   box.style.transition = 'transform 1s'; 
 

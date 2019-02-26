@@ -284,6 +284,7 @@ $pink: #EAAFB9;
   z-index: 997;
   transition-duration: 1s;
   visibility: hidden;
+  filter: blur(10px);
 }
 
 .close-button {

@@ -434,10 +434,21 @@ input[type=radio] {
   background: transparent;
   margin: 0 auto;
   width: 100%;
+  padding: 0px 25px 0px 5px;
 }
+@media (min-width: 576px) {
+  .news-container {
+    padding: 0px 40px;
+  }
+}
+
 .news-container hr {
   border-color: #0F5440;
   border-width: 0.5px;
+}
+
+.news-element-top-div {
+  padding: 0px 4px 0px 4px;
 }
 
 .news-elements {
@@ -455,7 +466,7 @@ input[type=radio] {
   grid-template-columns: 1fr 0.3fr;
   max-width: 100%;
   margin-top: 15px;
-  padding-left: 2px;
+  padding: 0px 4px 0px 4px;
 }
 @media (min-width: 576px) {
   .news-element {

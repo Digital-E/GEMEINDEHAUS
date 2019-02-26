@@ -446,17 +446,21 @@ input[type="radio"] {
     background: transparent;
     margin: 0 auto;
     width: 100%;
-    // padding: 0px 25px 0px 5px;
+    padding: 0px 25px 0px 5px;
     // z-index: 999;
 
     @media(min-width: 576px) {
-      // padding: 0px 40px;
+      padding: 0px 40px;
     }
 }
 
 .news-container hr {
   border-color: $green;
   border-width: 0.5px;
+}
+
+.news-element-top-div {
+  padding: 0px 4px 0px 4px;
 }
 
 
@@ -475,7 +479,7 @@ input[type="radio"] {
     grid-template-columns: 1fr 0.3fr;
     max-width: 100%;
     margin-top: 15px;
-    padding-left: 2px;
+    padding: 0px 4px 0px 4px;
 
     @media(min-width: 576px) {
       font-size: 32px;

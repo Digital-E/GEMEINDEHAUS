@@ -503,3 +503,22 @@ var mapExpandButton = document.querySelector('.map-button-mobile');
 mapExpandButton.addEventListener('click', function(){
   mapToExpand.classList.toggle('map-container-expand');
 })
+
+
+//Z-index Change
+
+// $(".news-element").on("mouseover",function(){
+//   // $(this).parent().children().each(function(){
+//   //   $(this).css({"opacity":"0.5","z-index":"1"});
+//   // }
+//   // );
+//   $(this).css({"opacity":"1","z-index":"999"});
+// });
+
+// $(".news-element").on("mouseout",function(){
+//   // $(this).parent().children().each(function(){
+//   //   $(this).css({"opacity":"1","z-index":"1"});
+//   // }
+//   // );
+//   $(this).css({"opacity":"1","z-index":"1"});
+// });

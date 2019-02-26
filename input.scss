@@ -18,7 +18,7 @@
 }
 
 .stop-scrolling {
-  height: 80%;
+  height: 100%;
   overflow: hidden;
 }
 
@@ -283,7 +283,7 @@ $pink: #EAAFB9;
   opacity: 0;
   z-index: 997;
   transition-duration: 1s;
-  visibility: hidden ;
+  visibility: hidden;
 }
 
 .close-button {
@@ -391,7 +391,7 @@ input[type="radio"] {
 .radio-group {
 
     position: fixed;
-    display: flex;
+    display: none;
     justify-content: space-between;
     align-items: center;
     font-size: 10px;
@@ -439,14 +439,17 @@ input[type="radio"] {
 
 .news-container {
     position: relative;
+    box-sizing: border-box;
     height: 100vh;
     background-color: $pink;
     background: transparent;
     margin: 0 auto;
-    width: 90%;
+    width: 100%;
+    padding: 0px 25px 0px 5px;
+    // z-index: 999;
 
     @media(min-width: 576px) {
-      
+      padding: 0px 40px;
     }
 }
 
@@ -491,10 +494,10 @@ input[type="radio"] {
 }
 
 
-.news-element:hover {
-    z-index: 999;
-    cursor: pointer;
-}
+// .news-element:hover {
+//     cursor: pointer;
+//     z-index: 999;
+// }
 
 
 .news-element-flex {

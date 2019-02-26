@@ -15,7 +15,7 @@
 }
 
 .stop-scrolling {
-  height: 80%;
+  height: 100%;
   overflow: hidden;
 }
 
@@ -380,7 +380,7 @@ input[type=radio] {
 
 .radio-group {
   position: fixed;
-  display: flex;
+  display: none;
   justify-content: space-between;
   align-items: center;
   font-size: 10px;
@@ -427,12 +427,20 @@ input[type=radio] {
 
 .news-container {
   position: relative;
+  box-sizing: border-box;
   height: 100vh;
   background-color: #EAAFB9;
   background: transparent;
   margin: 0 auto;
-  width: 90%;
+  width: 100%;
+  padding: 0px 25px 0px 5px;
 }
+@media (min-width: 576px) {
+  .news-container {
+    padding: 0px 40px;
+  }
+}
+
 .news-container hr {
   border-color: #0F5440;
   border-width: 0.5px;
@@ -473,11 +481,6 @@ input[type=radio] {
 
 .news-element span {
   transition-duration: 2s;
-}
-
-.news-element:hover {
-  z-index: 999;
-  cursor: pointer;
 }
 
 .news-element-flex {

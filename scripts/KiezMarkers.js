@@ -184,7 +184,7 @@ function initMap() {
     {name: 'Styled Map'});
 
     var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 17,
+      zoom: 15,
       center: {lat: 53.5564284, lng: 9.958706},
       mapTypeControlOptions: {
         mapTypeIds: ['roadmap', 'satellite', 'hybrid', 'terrain', 'styled_map']
@@ -240,16 +240,27 @@ function initMap() {
       ];
 
       markers.forEach(function(object, index, markers) {
-         markers[index] = new SVGMarker({
-            map: map,
+         markers[index] = new google.maps.Marker({
             position: new google.maps.LatLng(markersArray[index].lat, markersArray[index].long),
+            map: map,
             icon: {
-              anchor: new google.maps.Point(30, 30.26),
-              size: new google.maps.Size(60,30.26),
-              url: '../GEMEINDEHAUS/pin.svg'
+                url: '../GEMEINDEHAUS/pin.svg',
+                anchor: new google.maps.Point(30, 30.26),
+                scaledSize: new google.maps.Size(30, 30),
             }
-          });
+        });
       })
+
+    //   new SVGMarker({
+    //     map: map,
+    //     position: new google.maps.LatLng(markersArray[index].lat, markersArray[index].long),
+    //     icon: {
+    //       anchor: new google.maps.Point(30, 30.26),
+    //       size: new google.maps.Size(60,30.26),
+    //       url: './pin.svg'
+    //     //   '../GEMEINDEHAUS/pin.svg'
+    //     }
+    //   });
 
     var places = document.querySelectorAll('.map-list-grid-item');
     var placesNames = [];
@@ -261,9 +272,11 @@ function initMap() {
     places.forEach(function(place){
         place.addEventListener('click', zoomTo);
         place.addEventListener('mouseover', zoomTo);
+        place.addEventListener('mouseout', zoomOut);
     });
 
     function zoomTo() {
+
         var match, zoom;
         var name = this.childNodes[3].innerHTML;
 
@@ -274,12 +287,52 @@ function initMap() {
 
                 zoom = 18 + Math.random();
 
+                markers[match] = new google.maps.Marker({
+                    position: new google.maps.LatLng(markersArray[match].lat, markersArray[match].long),
+                    map: map,
+                    icon: {
+                        url: '../GEMEINDEHAUS/pin2.svg',
+                        anchor: new google.maps.Point(30, 30.26),
+                        scaledSize: new google.maps.Size(30, 30),
+                    }
+                });
+
             }
 
         }
 
-        map.setZoom(zoom);      // This will trigger a zoom_changed on the map
-        map.panTo(new google.maps.LatLng(markersArray[match].lat, markersArray[match].long));
+        // map.setZoom(zoom);      // This will trigger a zoom_changed on the map
+        // map.panTo(new google.maps.LatLng(markersArray[match].lat, markersArray[match].long));
+    };
+
+    function zoomOut() {
+
+        var match, zoom;
+        var name = this.childNodes[3].innerHTML;
+
+        for(var i = 0; i < placesNames.length + 1; i++) {
+            if (name == placesNames[i]) {
+
+                match = placesNames.indexOf(name);
+
+                zoom = 18 + Math.random();
+
+                markers[match] = new google.maps.Marker({
+                    position: new google.maps.LatLng(markersArray[match].lat, markersArray[match].long),
+                    map: map,
+                    icon: {
+                        url: '../GEMEINDEHAUS/pin.svg',
+                        anchor: new google.maps.Point(30, 30.26),
+                        scaledSize: new google.maps.Size(30, 30),
+                    }
+                });
+
+            }
+
+        }
+
+        // map.setZoom(zoom);      // This will trigger a zoom_changed on the map
+        // map.panTo(new google.maps.LatLng(markersArray[match].lat, markersArray[match].long));
     };
 
   });

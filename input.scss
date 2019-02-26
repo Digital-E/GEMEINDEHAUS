@@ -497,10 +497,9 @@ input[type="radio"] {
 }
 
 
-// .news-element:hover {
-//     cursor: pointer;
-//     z-index: 999;
-// }
+.news-element:hover {
+    cursor: pointer;
+}
 
 
 .news-element-flex {
@@ -1022,6 +1021,7 @@ input[type="radio"] {
   column-gap: 50px;
   margin: 25px 25px 25px 25px;
 
+
   @media(min-width: 576px) {
     grid-template-columns: repeat(2,1fr);
   }
@@ -1036,8 +1036,8 @@ input[type="radio"] {
 .map-list-grid-item:hover {
   box-sizing: border-box;
   transform: scale(0.99);
-  transition-duration: 1s;
   cursor: pointer;
+  transition-duration: 1s;
 }
 
 .map-list-grid-item:hover .map-list-grid-title {

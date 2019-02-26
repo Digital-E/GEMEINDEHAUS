@@ -488,6 +488,10 @@ input[type=radio] {
   transition-duration: 2s;
 }
 
+.news-element:hover {
+  cursor: pointer;
+}
+
 .news-element-flex {
   display: flex;
   font-size: 8px;
@@ -1065,8 +1069,8 @@ input[type=radio] {
 .map-list-grid-item:hover {
   box-sizing: border-box;
   transform: scale(0.99);
-  transition-duration: 1s;
   cursor: pointer;
+  transition-duration: 1s;
 }
 
 .map-list-grid-item:hover .map-list-grid-title {

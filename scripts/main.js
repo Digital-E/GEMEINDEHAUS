@@ -274,12 +274,14 @@ var index;
         index = 5;
     }
 
-    for(i = 0; i < box.children.length; i++) {
-        box.children[i].style.visibility = 'hidden';
-        // box.children[i].style.opacity = 0;
-        box.children[index].style.visibility = 'visible';
-        // box.children[index].style.opacity = 1;
+    setTimeout(function(){
+      for(i = 0; i < box.children.length; i++) {
+        // box.children[i].style.visibility = 'hidden';
+        box.children[i].style.opacity = 0;
+        // box.children[index].style.visibility = 'visible';
+        box.children[index].style.opacity = 1;
       }
+    },500)
 
   if(isExpanded) {
 

@@ -291,7 +291,7 @@ function initMap() {
                     position: new google.maps.LatLng(markersArray[match].lat, markersArray[match].long),
                     map: map,
                     icon: {
-                        url: './pin2.svg',
+                        url: '../GEMEINDEHAUS/pin2.svg',
                         anchor: new google.maps.Point(30, 30.26),
                         scaledSize: new google.maps.Size(30, 30),
                     }

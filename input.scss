@@ -80,6 +80,11 @@ $pink: #EAAFB9;
     background: transparent;
 } 
 
+::-webkit-scrollbar-track-piece {
+  background-color: transparent;
+  -webkit-border-radius: 6px
+}
+
 .inner-scroll-div {
   height: 100%;
 }

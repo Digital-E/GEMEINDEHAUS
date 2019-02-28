@@ -37,6 +37,10 @@ if(window.innerWidth < 768) {
 }
 
 
+//Block Viewport On Mobile
+
+setTimeout(function () { window.scrollTo(0, 1); }, 1000);
+
 //Back-end Code
 
 

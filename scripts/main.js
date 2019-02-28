@@ -1,9 +1,10 @@
 
 //Disable Body Scroll Desktop & Mobile
 
-$('body').addClass('stop-scrolling');
-$('body').bind('touchmove', function(e){e.preventDefault()});
-
+setTimeout(function(){
+  $('body').addClass('stop-scrolling');
+  $('body').bind('touchmove', function(e){e.preventDefault()});
+},1000);
 
 //Riot.JS Routing
 

@@ -285,7 +285,7 @@ function initMap() {
 
                 match = placesNames.indexOf(name);
 
-                zoom = 18 + Math.random();
+                zoom = 16 + Math.random();
 
                 markers[match] = new google.maps.Marker({
                     position: new google.maps.LatLng(markersArray[match].lat, markersArray[match].long),
@@ -301,8 +301,8 @@ function initMap() {
 
         }
 
-        // map.setZoom(zoom);      // This will trigger a zoom_changed on the map
-        // map.panTo(new google.maps.LatLng(markersArray[match].lat, markersArray[match].long));
+        map.setZoom(zoom);      // This will trigger a zoom_changed on the map
+        map.panTo(new google.maps.LatLng(markersArray[match].lat, markersArray[match].long));
     };
 
     function zoomOut() {

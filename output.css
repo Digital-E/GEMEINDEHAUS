@@ -522,7 +522,7 @@ input[type=radio] {
 }
 
 .news-loaded-container {
-  position: absolute;
+  position: fixed;
   background-color: #0F5440;
   color: #EAAFB9;
   height: 100%;

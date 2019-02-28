@@ -1,3 +1,7 @@
+$('body').addClass('stop-scrolling');
+$('body').bind('touchmove', function(e){e.preventDefault()});
+
+
 //Riot.JS Routing
 
 route.start(true);

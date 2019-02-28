@@ -528,6 +528,7 @@ input[type=radio] {
   height: 100%;
   width: 100%;
   top: 100%;
+  z-index: 999;
 }
 
 .back-button {
@@ -1155,12 +1156,6 @@ input[type=radio] {
   justify-self: flex-start;
   align-self: flex-start;
   line-height: 18px;
-}
-
-.news-loaded-container {
-  position: fixed;
-  height: 100vh;
-  z-index: 999;
 }
 
 .news-loaded-content-top-container-background {

@@ -6,6 +6,14 @@ setTimeout(function(){
   $('body').bind('touchmove', function(e){e.preventDefault()});
 },1000);
 
+//Grid Animate
+
+// const gridRight = document.querySelector(".map-container-right");
+// const gridLeft = document.querySelector(".map-container-left");
+
+// animateCSSGrid.wrapGrid(gridRight, {duration : 1000, stagger: 100, easing: 'backInOut'});
+// animateCSSGrid.wrapGrid(gridLeft, {duration : 1000, stagger: 100, easing: 'backInOut'});
+
 //Riot.JS Routing
 
 route.start(true);

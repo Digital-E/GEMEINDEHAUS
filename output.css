@@ -1001,7 +1001,6 @@ input[type=radio] {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 0fr 1fr;
-  transition-duration: 1s;
 }
 @media (min-width: 576px) {
   .map-container {
@@ -1011,8 +1010,7 @@ input[type=radio] {
 }
 
 .map-container-expand {
-  grid-template-rows: 0.4fr 0.6fr;
-  transition-duration: 1s;
+  grid-template-rows: 0.5fr 0.5fr;
 }
 
 .map-container hr {

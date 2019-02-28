@@ -1,3 +1,6 @@
+
+//Disable Body Scroll Desktop & Mobile
+
 $('body').addClass('stop-scrolling');
 $('body').bind('touchmove', function(e){e.preventDefault()});
 

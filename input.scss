@@ -76,6 +76,8 @@ $pink: #EAAFB9;
 
 ::-webkit-scrollbar { 
     display: none; 
+    width: 0px;
+    background: transparent;
 } 
 
 .inner-scroll-div {

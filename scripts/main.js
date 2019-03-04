@@ -49,13 +49,11 @@ if(window.innerWidth < 768) {
   $(function() {  
     $(".map-container-left").niceScroll({autohidemode: "hidden"});
     $(".inner-scroll-div").niceScroll({autohidemode: "hidden"});
+    $(".header").niceScroll({autohidemode: "hidden"});
   });
 }
 
 
-//Block Viewport On Mobile
-
-// setTimeout(function () { window.scrollTo(0, 1); }, 1000);
 
 //Back-end Code
 
@@ -302,11 +300,13 @@ var index;
     setTimeout(function(){
       for(i = 0; i < box.children.length; i++) {
         // box.children[i].style.visibility = 'hidden';
-        box.children[i].style.opacity = 0;
+        // box.children[i].style.opacity = 0;
+        box.children[i].style.display = 'none';
         // box.children[index].style.visibility = 'visible';
-        box.children[index].style.opacity = 1;
+        // box.children[index].style.opacity = 1;
+        box.children[index].style.display = 'inline-block';
       }
-    },500)
+    },700);
 
   if(isExpanded) {
 
@@ -430,6 +430,8 @@ function expand(currentClass, closed) {
           for(i = 0; i < box.children.length; i++) {
             box.children[i].style.visibility = "visible";
             box.children[i].style.opacity = 1;
+
+            box.children[i].style.display = 'inline-block';
               }  
             },1000);
 

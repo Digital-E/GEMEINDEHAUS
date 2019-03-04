@@ -254,11 +254,6 @@ var closed;
 var index;
 
  function changeSide() {
-
-  // var scrollIntoView = document.querySelector('.news-element-top-div');
-  // scrollIntoView.scrollIntoView(true);
-
-    $(".news-elements").animate({ scrollTop: 0 }, "slow");
   
   $('body').addClass('stop-scrolling');
   $('body').bind('touchmove', function(e){e.preventDefault()});
@@ -438,6 +433,7 @@ function expand(currentClass, closed) {
       document.removeEventListener('mousemove', moveFunction);
       window.removeEventListener("deviceorientation", handleOrientation);
 
+    
 
       setTimeout(function(){
         scene.classList.remove('scene');
@@ -545,18 +541,18 @@ mapExpandButton.addEventListener('click', function(){
 
 //Z-index Change
 
-// $(".news-element").on("mouseover",function(){
-//   // $(this).parent().children().each(function(){
-//   //   $(this).css({"opacity":"0.5","z-index":"1"});
-//   // }
-//   // );
-//   $(this).css({"opacity":"1","z-index":"999"});
-// });
+$(".news-element").on("mouseover",function(){
+  $(this).parent().children().each(function(){
+    $(this).css({"opacity":"0.7","z-index":"1"});
+  }
+  );
+  $(this).css({"opacity":"1","z-index":"999"});
+});
 
-// $(".news-element").on("mouseout",function(){
-//   // $(this).parent().children().each(function(){
-//   //   $(this).css({"opacity":"1","z-index":"1"});
-//   // }
-//   // );
-//   $(this).css({"opacity":"1","z-index":"1"});
-// });
+$(".news-element").on("mouseout",function(){
+  $(this).parent().children().each(function(){
+    $(this).css({"opacity":"1","z-index":"1"});
+  }
+  );
+  $(this).css({"opacity":"1","z-index":"1"});
+});

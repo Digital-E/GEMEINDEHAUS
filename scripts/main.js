@@ -254,6 +254,11 @@ var closed;
 var index;
 
  function changeSide() {
+
+  // var scrollIntoView = document.querySelector('.news-element-top-div');
+  // scrollIntoView.scrollIntoView(true);
+
+    $(".news-elements").animate({ scrollTop: 0 }, "slow");
   
   $('body').addClass('stop-scrolling');
   $('body').bind('touchmove', function(e){e.preventDefault()});
@@ -432,6 +437,7 @@ function expand(currentClass, closed) {
 
       document.removeEventListener('mousemove', moveFunction);
       window.removeEventListener("deviceorientation", handleOrientation);
+
 
       setTimeout(function(){
         scene.classList.remove('scene');

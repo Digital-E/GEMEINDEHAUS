@@ -497,6 +497,7 @@ input[type=radio] {
 
 .news-element:hover {
   cursor: pointer;
+  z-index: 999;
 }
 
 .news-element-flex {
@@ -598,7 +599,7 @@ input[type=radio] {
 .box {
   width: 100%;
   height: 100%;
-  position: relative;
+  position: fixed;
   transform-style: preserve-3d;
   transform: translateZ(-200px);
   transition: transform 0.1s;
@@ -805,6 +806,7 @@ input[type=radio] {
 }
 
 .box--expanded {
+  position: fixed;
   width: 100%;
   height: 100%;
   perspective: none;
@@ -832,7 +834,7 @@ input[type=radio] {
 }
 
 .back--scene--expand {
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100%;
   margin: 0;

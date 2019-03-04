@@ -302,6 +302,8 @@ $pink: #EAAFB9;
   right: 0;
   margin-right: 25px;
   z-index: 999;
+  display: inline-block;
+  opacity: 0;
 }
 
 .close-button:hover {

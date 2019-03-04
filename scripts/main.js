@@ -22,23 +22,20 @@ route.start(true);
 
 route(function(event, id) {
 
-  if(id) {
-
-    Prismic.api("https://gemeindehaus.cdn.prismic.io/api/v2").then(function(api) {
-      return api.getByID(id);
-  }).then(function(response) {
-      console.log("Documents: ", response);
-      loadEventToDom(response);
-  }, function(err) {
-      console.log("Something went wrong: ", err);
-  });
-
-  } else {
-
     history.pushState(null, null, '/');
         
     TweenMax.staggerTo(".header-subelement", 2, {y:'0%', ease:Power2.easeInOut}, 0);
 
+    if(id) {
+
+      Prismic.api("https://gemeindehaus.cdn.prismic.io/api/v2").then(function(api) {
+        return api.getByID(id);
+    }).then(function(response) {
+        console.log("Documents: ", response);
+        loadEventToDom(response);
+    }, function(err) {
+        console.log("Something went wrong: ", err);
+    });
   }
 
 });
@@ -257,6 +254,8 @@ var closed;
 var index;
 
  function changeSide() {
+
+  $('.close-button').animate({'display' : 'inline-block', 'opacity' : '1'},2000);
   
   $('body').addClass('stop-scrolling');
   $('body').bind('touchmove', function(e){e.preventDefault()});
@@ -352,6 +351,8 @@ for(var i = 0; i < closeButtons.length; i++) {
 }
 
 function closeAll() {
+
+  $('.close-button').animate({'display' : 'inline-block', 'opacity':'0'},1000);
 
   expand("", "closed");
 

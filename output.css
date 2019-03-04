@@ -809,6 +809,16 @@ input[type=radio] {
   }
 }
 
+.impressum-fotos {
+  font-size: 10px;
+  font-family: "GT-America";
+}
+@media (min-width: 576px) {
+  .impressum-fotos {
+    font-size: 14px;
+  }
+}
+
 .box--expanded {
   width: 100%;
   height: 100%;

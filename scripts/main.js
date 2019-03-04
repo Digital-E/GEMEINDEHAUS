@@ -102,18 +102,23 @@ Prismic.api("https://gemeindehaus.cdn.prismic.io/api/v2").then(function(api) {
     var newsElementsList = document.querySelector('.news-elements');
     newsElementsList.appendChild(impressumButton);
   
-    // Translate Impressum Div Right
+    // Translate Impressum Div
   
   var impressumButton = document.querySelector('.impressum-button');
   var impressumContent = document.querySelector('.impressum-content');
   
   impressumButton.addEventListener('click', function() {
-  
-    TweenMax.staggerTo(".header-subelement", 2, {y:'20%', ease:Power2.easeInOut}, 0);
+
+    $('.news-elements').animate({scrollTop:0}, 1000);
+
+    $('body').removeClass('stop-scrolling');
+
+    TweenMax.staggerTo(".header-subelement", 2, {y:'30%', ease:Power2.easeInOut}, 0);
     impressumContent.style.zIndex = "999";
     TweenMax.to(".impressum-content",2, {y:'5%', ease:Power2.easeInOut});
   
     window.addEventListener('scroll', function(){
+      $('body').addClass('stop-scrolling');
       TweenMax.staggerTo(".header-subelement", 0.5, {y:'0%', ease:Power2.easeOut}, 0);
       impressumContent.style.zIndex = "0";
       TweenMax.to(".impressum-content",0.2, {y:'-200%', ease:Power2.easeIn});

@@ -768,6 +768,15 @@ input[type="radio"] {
   }
 }
 
+.impressum-fotos {
+  font-size: 10px;
+  font-family: "GT-America";
+
+  @media(min-width: 576px) {
+    font-size: 14px;
+  }
+}
+
 // Samuel CSS
 
 .box--expanded {
